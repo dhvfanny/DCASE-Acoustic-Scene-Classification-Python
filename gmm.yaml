@@ -13,8 +13,8 @@ flow:
 # General
 # ==========================================================
 general:
-  development_dataset: TUTAcousticScenes_2016_DevelopmentSet
-  challenge_dataset: TUTAcousticScenes_2016_EvaluationSet
+  development_dataset: DCASE2013_Scene_DevelopmentSet
+  challenge_dataset: DCASE2013_Scene_EvaluationSet
 
   overwrite: false              # Overwrite previously stored data
 
@@ -24,7 +24,7 @@ general:
 path:
   data: data/
 
-  base: system/baseline_dcase2016_task1/
+  base: system/baseline_dcase2013_task1/
   features: features/
   feature_normalizers: feature_normalizers/
   models: acoustic_models/
@@ -68,13 +68,13 @@ classifier:
 
 classifier_parameters:
   gmm:
-    n_components: 16            # Number of Gaussian components
+    n_components: 1            # Number of Gaussian components
     covariance_type: diag       # [diag|full] Diagonal or full covariance matrix
     random_state: 0
     thresh: !!null
     tol: 0.001
     min_covar: 0.001
-    n_iter: 40
+    n_iter: 100
     n_init: 1
     params: wmc
     init_params: wmc

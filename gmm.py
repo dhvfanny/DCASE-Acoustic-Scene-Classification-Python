@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # DCASE 2016::Acoustic Scene Classification / Baseline System
+#import sys
+#sys.path.insert(0, '../')
 
 from src.ui import *
 from src.general import *
@@ -15,6 +17,11 @@ import numpy
 import csv
 import argparse
 import textwrap
+from sklearn.metrics import confusion_matrix
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import timeit
 
 from sklearn import mixture
 
@@ -23,6 +30,8 @@ __version__ = '.'.join(__version_info__)
 
 
 def main(argv):
+    matplotlib.use('Agg')
+    start = timeit.default_timer()
     numpy.random.seed(123456)  # let's make randomization predictable
 
     parser = argparse.ArgumentParser(
@@ -53,7 +62,7 @@ def main(argv):
     args = parser.parse_args()
 
     # Load parameters from config file
-    params = load_parameters('task1_scene_classification.yaml')
+    params = load_parameters('gmm.yaml')
     params = process_parameters(params)
 
     title("DCASE 2016::Acoustic Scene Classification / Baseline System")
@@ -158,10 +167,12 @@ def main(argv):
         # ==================================================
         if params['flow']['evaluate_system']:
             section_header('System evaluation')
-
+            
+            plot_name = params['classifier']['method'] + str(params['classifier']['parameters']['n_components'])
             do_system_evaluation(dataset=dataset,
                                  dataset_evaluation_mode=dataset_evaluation_mode,
-                                 result_path=params['path']['results'])
+                                 result_path=params['path']['results'],
+				 plot_name=plot_name)
 
             foot()
 
@@ -192,6 +203,11 @@ def main(argv):
             print " "
             print "Your results for the challenge data are stored at ["+params['path']['challenge_results']+"]"
             print " "
+
+    end = timeit.default_timer()
+    print " "
+    print "Total Time : " + str(end-start) 	
+    print " "
     return 0
 
 
@@ -742,8 +758,27 @@ def do_classification_gmm(feature_data, model_container):
     classification_result_id = numpy.argmax(logls)
     return model_container['models'].keys()[classification_result_id]
 
+def plot_cm(cm, targets, title='Confusion Matrix', cmap=plt.cm.Blues, norm=True, name='Plot'):
+    if(norm):
+        cm = cm.astype(float)/cm.sum(axis=1)[:, numpy.newaxis]
+    fig = plt.figure()
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title + ' ' + name)
+    plt.colorbar()
 
-def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
+    tick_marks = numpy.arange(len(targets))
+    plt.xticks(tick_marks, targets)
+    plt.yticks(tick_marks, targets)
+
+    plt.ylabel('True Label')
+    plt.xlabel('Predicted Label')
+
+    # plt.show()
+    fig.savefig(name + '.png')
+    #plt.close()
+
+def do_system_evaluation(dataset, result_path, plot_name, dataset_evaluation_mode='folds'):
+
     """System evaluation. Testing outputs are collected and evaluated. Evaluation results are printed.
 
     Parameters
@@ -771,6 +806,8 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
 
     dcase2016_scene_metric = DCASE2016_SceneClassification_Metrics(class_list=dataset.scene_labels)
     results_fold = []
+    print str(dataset.scene_label_count)
+    tot_cm = numpy.zeros((dataset.scene_label_count, dataset.scene_label_count))
     for fold in dataset.folds(mode=dataset_evaluation_mode):
         dcase2016_scene_metric_fold = DCASE2016_SceneClassification_Metrics(class_list=dataset.scene_labels)
         results = []
@@ -791,6 +828,10 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
         dcase2016_scene_metric.evaluate(system_output=y_pred, annotated_ground_truth=y_true)
         dcase2016_scene_metric_fold.evaluate(system_output=y_pred, annotated_ground_truth=y_true)
         results_fold.append(dcase2016_scene_metric_fold.results())
+	tot_cm += confusion_matrix(y_true, y_pred)
+	
+    print tot_cm	
+    plot_cm(tot_cm, dataset.scene_labels,name=plot_name)
     results = dcase2016_scene_metric.results()
 
     print "  File-wise evaluation, over %d folds" % dataset.fold_count

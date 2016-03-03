@@ -1581,7 +1581,8 @@ class DCASE2013_Scene_DevelopmentSet(Dataset):
             section_header('Generating evaluation setup files for dataset')
             if not os.path.isdir(self.evaluation_setup_path):
                 os.makedirs(self.evaluation_setup_path)
-
+	
+	    print self.evaluation_setup_path	
             classes = []
             files = []
             for item in self.meta:
@@ -1589,6 +1590,8 @@ class DCASE2013_Scene_DevelopmentSet(Dataset):
                 files.append(item['file'])
             files = numpy.array(files)
 
+	    	
+           
             sss = StratifiedShuffleSplit(y=classes, n_iter=self.evaluation_folds, test_size=0.3, random_state=0)
             fold = 1
             for train_index, test_index in sss:

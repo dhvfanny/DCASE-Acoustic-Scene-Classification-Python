@@ -5,6 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+*.wav
+*.zip
+*.rar
 
 # Distribution / packaging
 .Python
