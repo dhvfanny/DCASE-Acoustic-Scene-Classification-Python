@@ -767,7 +767,7 @@ def plot_cm(cm, targets, title='Confusion Matrix', cmap=plt.cm.Blues, norm=True,
     plt.colorbar()
 
     tick_marks = numpy.arange(len(targets))
-    plt.xticks(tick_marks, targets)
+    plt.xticks(tick_marks, targets,rotation=45)
     plt.yticks(tick_marks, targets)
 
     plt.ylabel('True Label')
