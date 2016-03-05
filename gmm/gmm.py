@@ -22,12 +22,15 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import timeit
+from sklearn.externals import joblib
 
 from sklearn import mixture
 
 __version_info__ = ('1', '0', '0')
 __version__ = '.'.join(__version_info__)
 
+
+final_result = {}
 
 def main(argv):
     matplotlib.use('Agg')
@@ -163,12 +166,14 @@ def main(argv):
             
             foot()
 
+       
+        plot_name = params['classifier']['method'] + str(params['classifier']['parameters']['n_components'])
         # System evaluation
         # ==================================================
         if params['flow']['evaluate_system']:
             section_header('System evaluation')
             
-            plot_name = params['classifier']['method'] + str(params['classifier']['parameters']['n_components'])
+            #plot_name = params['classifier']['method'] + str(params['classifier']['parameters']['n_components'])
             do_system_evaluation(dataset=dataset,
                                  dataset_evaluation_mode=dataset_evaluation_mode,
                                  result_path=params['path']['results'],
@@ -208,6 +213,10 @@ def main(argv):
     print " "
     print "Total Time : " + str(end-start) 	
     print " "
+    final_result['time'] = end-start
+    joblib.dump(final_result, 'outputs/result' + plot_name + '.pkl')   
+
+ 
     return 0
 
 
@@ -831,7 +840,10 @@ def do_system_evaluation(dataset, result_path, plot_name, dataset_evaluation_mod
 	tot_cm += confusion_matrix(y_true, y_pred)
 	
     print tot_cm	
-    plot_cm(tot_cm, dataset.scene_labels,name=plot_name)
+    #plot_cm(tot_cm, dataset.scene_labels,name=plot_name)
+    #joblib.dump(tot_cm, plot_name + '.pkl')
+    final_result['tot_cm'] = tot_cm
+    final_result['tot_cm_acc'] = np.sum(np.diag(tot_cm))/np.sum(tot_cm)
     results = dcase2016_scene_metric.results()
 
     print "  File-wise evaluation, over %d folds" % dataset.fold_count
@@ -862,6 +874,7 @@ def do_system_evaluation(dataset, result_path, plot_name, dataset_evaluation_mod
                                                                  results['Nref'],
                                                                  results['Nsys'],
                                                                  results['overall_accuracy'] * 100)+fold_values
+    final_result['result'] = results	
 
 if __name__ == "__main__":
     try:
