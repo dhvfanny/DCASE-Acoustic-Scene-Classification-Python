@@ -31,4 +31,3 @@ for f in glob.glob('result*.pkl'):
    clf_name = re.search('(?<=result)\w+(?=.pkl)', f).group(0)
    print clf_name
    plot_cm(res['tot_cm'], res['result']['overall_accuracy'], res['result']['class_wise_accuracy'].keys(), title='Confusion Matrix - '+clf_name)
-
