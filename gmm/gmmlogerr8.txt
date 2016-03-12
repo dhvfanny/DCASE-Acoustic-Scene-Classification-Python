@@ -1,9 +1,0 @@
-/home/rohit21122012/dcase2016/local/lib/python2.7/site-packages/librosa/core/audio.py:33: UserWarning: Could not import scikits.samplerate. Falling back to scipy.signal
-  warnings.warn('Could not import scikits.samplerate. '
-/home/rohit21122012/dcase2016/local/lib/python2.7/site-packages/matplotlib/__init__.py:1350: UserWarning:  This call to matplotlib.use() has no effect
-because the backend has already been chosen;
-matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
-or matplotlib.backends is imported for the first time.
-
-  warnings.warn(_use_error_msg)
- : cannot connect to X server localhost:10.0

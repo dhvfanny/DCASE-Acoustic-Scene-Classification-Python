@@ -1,674 +1,0 @@
---------------------------------
-DCASE 2016::Acoustic Scene Classification / Baseline System
---------------------------------
-Running system in development mode
- 
-Feature extraction
-================================
-  `  Extracting           [  0%] [bus01.wav           ]                            *  Extracting           [  1%] [bus02.wav           ]                            ;  Extracting           [  2%] [bus03.wav           ]                            ,  Extracting           [  3%] [bus04.wav           ]                            `  Extracting           [  4%] [bus05.wav           ]                            *  Extracting           [  5%] [bus06.wav           ]                            ;  Extracting           [  6%] [bus07.wav           ]                            ,  Extracting           [  7%] [bus08.wav           ]                            `  Extracting           [  8%] [bus09.wav           ]                            *  Extracting           [  9%] [bus10.wav           ]                            ;  Extracting           [ 10%] [busystreet01.wav    ]                            ,  Extracting           [ 11%] [busystreet02.wav    ]                            `  Extracting           [ 12%] [busystreet03.wav    ]                            *  Extracting           [ 13%] [busystreet04.wav    ]                            ;  Extracting           [ 14%] [busystreet05.wav    ]                            ,  Extracting           [ 15%] [busystreet06.wav    ]                            `  Extracting           [ 16%] [busystreet07.wav    ]                            *  Extracting           [ 17%] [busystreet08.wav    ]                            ;  Extracting           [ 18%] [busystreet09.wav    ]                            ,  Extracting           [ 19%] [busystreet10.wav    ]                            `  Extracting           [ 20%] [office01.wav        ]                            *  Extracting           [ 21%] [office02.wav        ]                            ;  Extracting           [ 22%] [office03.wav        ]                            ,  Extracting           [ 23%] [office04.wav        ]                            `  Extracting           [ 24%] [office05.wav        ]                            *  Extracting           [ 25%] [office06.wav        ]                            ;  Extracting           [ 26%] [office07.wav        ]                            ,  Extracting           [ 27%] [office08.wav        ]                            `  Extracting           [ 28%] [office09.wav        ]                            *  Extracting           [ 29%] [office10.wav        ]                            ;  Extracting           [ 30%] [openairmarket01.wav ]                            ,  Extracting           [ 31%] [openairmarket02.wav ]                            `  Extracting           [ 32%] [openairmarket03.wav ]                            *  Extracting           [ 33%] [openairmarket04.wav ]                            ;  Extracting           [ 34%] [openairmarket05.wav ]                            ,  Extracting           [ 35%] [openairmarket06.wav ]                            `  Extracting           [ 36%] [openairmarket07.wav ]                            *  Extracting           [ 37%] [openairmarket08.wav ]                            ;  Extracting           [ 38%] [openairmarket09.wav ]                            ,  Extracting           [ 39%] [openairmarket10.wav ]                            `  Extracting           [ 40%] [park01.wav          ]                            *  Extracting           [ 41%] [park02.wav          ]                            ;  Extracting           [ 42%] [park03.wav          ]                            ,  Extracting           [ 43%] [park04.wav          ]                            `  Extracting           [ 44%] [park05.wav          ]                            *  Extracting           [ 45%] [park06.wav          ]                            ;  Extracting           [ 46%] [park07.wav          ]                            ,  Extracting           [ 47%] [park08.wav          ]                            `  Extracting           [ 48%] [park09.wav          ]                            *  Extracting           [ 49%] [park10.wav          ]                            ;  Extracting           [ 50%] [quietstreet01.wav   ]                            ,  Extracting           [ 51%] [quietstreet02.wav   ]                            `  Extracting           [ 52%] [quietstreet03.wav   ]                            *  Extracting           [ 53%] [quietstreet04.wav   ]                            ;  Extracting           [ 54%] [quietstreet05.wav   ]                            ,  Extracting           [ 55%] [quietstreet06.wav   ]                            `  Extracting           [ 56%] [quietstreet07.wav   ]                            *  Extracting           [ 57%] [quietstreet08.wav   ]                            ;  Extracting           [ 58%] [quietstreet09.wav   ]                            ,  Extracting           [ 59%] [quietstreet10.wav   ]                            `  Extracting           [ 60%] [restaurant01.wav    ]                            *  Extracting           [ 61%] [restaurant02.wav    ]                            ;  Extracting           [ 62%] [restaurant03.wav    ]                            ,  Extracting           [ 63%] [restaurant04.wav    ]                            `  Extracting           [ 64%] [restaurant05.wav    ]                            *  Extracting           [ 65%] [restaurant06.wav    ]                            ;  Extracting           [ 66%] [restaurant07.wav    ]                            ,  Extracting           [ 67%] [restaurant08.wav    ]                            `  Extracting           [ 68%] [restaurant09.wav    ]                            *  Extracting           [ 69%] [restaurant10.wav    ]                            ;  Extracting           [ 70%] [supermarket01.wav   ]                            ,  Extracting           [ 71%] [supermarket02.wav   ]                            `  Extracting           [ 72%] [supermarket03.wav   ]                            *  Extracting           [ 73%] [supermarket04.wav   ]                            ;  Extracting           [ 74%] [supermarket05.wav   ]                            ,  Extracting           [ 75%] [supermarket06.wav   ]                            `  Extracting           [ 76%] [supermarket07.wav   ]                            *  Extracting           [ 77%] [supermarket08.wav   ]                            ;  Extracting           [ 78%] [supermarket09.wav   ]                            ,  Extracting           [ 79%] [supermarket10.wav   ]                            `  Extracting           [ 80%] [tube01.wav          ]                            *  Extracting           [ 81%] [tube02.wav          ]                            ;  Extracting           [ 82%] [tube03.wav          ]                            ,  Extracting           [ 83%] [tube04.wav          ]                            `  Extracting           [ 84%] [tube05.wav          ]                            *  Extracting           [ 85%] [tube06.wav          ]                            ;  Extracting           [ 86%] [tube07.wav          ]                            ,  Extracting           [ 87%] [tube08.wav          ]                            `  Extracting           [ 88%] [tube09.wav          ]                            *  Extracting           [ 89%] [tube10.wav          ]                            ;  Extracting           [ 90%] [tubestation01.wav   ]                            ,  Extracting           [ 91%] [tubestation02.wav   ]                            `  Extracting           [ 92%] [tubestation03.wav   ]                            *  Extracting           [ 93%] [tubestation04.wav   ]                            ;  Extracting           [ 94%] [tubestation05.wav   ]                            ,  Extracting           [ 95%] [tubestation06.wav   ]                            `  Extracting           [ 96%] [tubestation07.wav   ]                            *  Extracting           [ 97%] [tubestation08.wav   ]                            ;  Extracting           [ 98%] [tubestation09.wav   ]                            ,  Extracting           [ 99%] [tubestation10.wav   ]                            [Done]                                                                             
- 
-Feature normalizer
-================================
-  [Done]                                                                             
- 
-System training
-================================
-  `  Collecting data      fold[1] [  0%] [openairmarket08.wav ]                          *  Collecting data      fold[1] [  1%] [busystreet04.wav    ]                          ;  Collecting data      fold[1] [  3%] [openairmarket03.wav ]                          ,  Collecting data      fold[1] [  4%] [office02.wav        ]                          `  Collecting data      fold[1] [  6%] [supermarket04.wav   ]                          *  Collecting data      fold[1] [  7%] [park06.wav          ]                          ;  Collecting data      fold[1] [  9%] [restaurant08.wav    ]                          ,  Collecting data      fold[1] [ 10%] [tube09.wav          ]                          `  Collecting data      fold[1] [ 11%] [supermarket07.wav   ]                          *  Collecting data      fold[1] [ 13%] [park02.wav          ]                          ;  Collecting data      fold[1] [ 14%] [busystreet09.wav    ]                          ,  Collecting data      fold[1] [ 16%] [restaurant02.wav    ]                          `  Collecting data      fold[1] [ 17%] [quietstreet10.wav   ]                          *  Collecting data      fold[1] [ 19%] [tubestation08.wav   ]                          ;  Collecting data      fold[1] [ 20%] [tubestation09.wav   ]                          ,  Collecting data      fold[1] [ 21%] [bus08.wav           ]                          `  Collecting data      fold[1] [ 23%] [tube06.wav          ]                          *  Collecting data      fold[1] [ 24%] [office09.wav        ]                          ;  Collecting data      fold[1] [ 26%] [quietstreet06.wav   ]                          ,  Collecting data      fold[1] [ 27%] [restaurant03.wav    ]                          `  Collecting data      fold[1] [ 29%] [busystreet06.wav    ]                          *  Collecting data      fold[1] [ 30%] [busystreet10.wav    ]                          ;  Collecting data      fold[1] [ 31%] [openairmarket02.wav ]                          ,  Collecting data      fold[1] [ 33%] [quietstreet07.wav   ]                          `  Collecting data      fold[1] [ 34%] [bus02.wav           ]                          *  Collecting data      fold[1] [ 36%] [bus09.wav           ]                          ;  Collecting data      fold[1] [ 37%] [openairmarket06.wav ]                          ,  Collecting data      fold[1] [ 39%] [restaurant09.wav    ]                          `  Collecting data      fold[1] [ 40%] [office03.wav        ]                          *  Collecting data      fold[1] [ 41%] [openairmarket09.wav ]                          ;  Collecting data      fold[1] [ 43%] [park01.wav          ]                          ,  Collecting data      fold[1] [ 44%] [office05.wav        ]                          `  Collecting data      fold[1] [ 46%] [tubestation04.wav   ]                          *  Collecting data      fold[1] [ 47%] [office06.wav        ]                          ;  Collecting data      fold[1] [ 49%] [supermarket06.wav   ]                          ,  Collecting data      fold[1] [ 50%] [tube08.wav          ]                          `  Collecting data      fold[1] [ 51%] [tube05.wav          ]                          *  Collecting data      fold[1] [ 53%] [restaurant07.wav    ]                          ;  Collecting data      fold[1] [ 54%] [bus05.wav           ]                          ,  Collecting data      fold[1] [ 56%] [tubestation01.wav   ]                          `  Collecting data      fold[1] [ 57%] [busystreet03.wav    ]                          *  Collecting data      fold[1] [ 59%] [supermarket08.wav   ]                          ;  Collecting data      fold[1] [ 60%] [busystreet02.wav    ]                          ,  Collecting data      fold[1] [ 61%] [openairmarket07.wav ]                          `  Collecting data      fold[1] [ 63%] [quietstreet03.wav   ]                          *  Collecting data      fold[1] [ 64%] [tubestation06.wav   ]                          ;  Collecting data      fold[1] [ 66%] [restaurant04.wav    ]                          ,  Collecting data      fold[1] [ 67%] [supermarket03.wav   ]                          `  Collecting data      fold[1] [ 69%] [bus10.wav           ]                          *  Collecting data      fold[1] [ 70%] [park03.wav          ]                          ;  Collecting data      fold[1] [ 71%] [tubestation03.wav   ]                          ,  Collecting data      fold[1] [ 73%] [park07.wav          ]                          `  Collecting data      fold[1] [ 74%] [quietstreet09.wav   ]                          *  Collecting data      fold[1] [ 76%] [supermarket10.wav   ]                          ;  Collecting data      fold[1] [ 77%] [tubestation02.wav   ]                          ,  Collecting data      fold[1] [ 79%] [tube02.wav          ]                          `  Collecting data      fold[1] [ 80%] [park08.wav          ]                          *  Collecting data      fold[1] [ 81%] [tube04.wav          ]                          ;  Collecting data      fold[1] [ 83%] [park05.wav          ]                          ,  Collecting data      fold[1] [ 84%] [bus03.wav           ]                          `  Collecting data      fold[1] [ 86%] [quietstreet02.wav   ]                          *  Collecting data      fold[1] [ 87%] [quietstreet04.wav   ]                          ;  Collecting data      fold[1] [ 89%] [bus07.wav           ]                          ,  Collecting data      fold[1] [ 90%] [supermarket01.wav   ]                          `  Collecting data      fold[1] [ 91%] [restaurant06.wav    ]                          *  Collecting data      fold[1] [ 93%] [busystreet01.wav    ]                          ;  Collecting data      fold[1] [ 94%] [openairmarket10.wav ]                          ,  Collecting data      fold[1] [ 96%] [tube10.wav          ]                          `  Collecting data      fold[1] [ 97%] [office01.wav        ]                          *  Collecting data      fold[1] [ 99%] [office04.wav        ]                          ;  Train models         fold[1]        [busystreet          ]                       ,  Train models         fold[1]        [office              ]                       `  Train models         fold[1]        [restaurant          ]                       *  Train models         fold[1]        [bus                 ]                       ;  Train models         fold[1]        [tube                ]                       ,  Train models         fold[1]        [park                ]                       `  Train models         fold[1]        [supermarket         ]                       *  Train models         fold[1]        [quietstreet         ]                       ;  Train models         fold[1]        [tubestation         ]                       ,  Train models         fold[1]        [openairmarket       ]                     Step #1, avg. loss: 2.69793
-Step #101, avg. loss: 2.15420
-Step #201, epoch #1, avg. loss: 1.58100
-Step #301, epoch #2, avg. loss: 1.24569
-Step #401, epoch #3, avg. loss: 1.07959
-Step #501, epoch #4, avg. loss: 0.97204
-Step #601, epoch #5, avg. loss: 0.89430
-Step #701, epoch #6, avg. loss: 0.82678
-Step #801, epoch #7, avg. loss: 0.78184
-Step #901, epoch #8, avg. loss: 0.74163
-{}
-  `  Collecting data      fold[2] [  0%] [busystreet08.wav    ]                          *  Collecting data      fold[2] [  1%] [tubestation10.wav   ]                          ;  Collecting data      fold[2] [  3%] [office01.wav        ]                          ,  Collecting data      fold[2] [  4%] [tubestation03.wav   ]                          `  Collecting data      fold[2] [  6%] [restaurant03.wav    ]                          *  Collecting data      fold[2] [  7%] [supermarket03.wav   ]                          ;  Collecting data      fold[2] [  9%] [park10.wav          ]                          ,  Collecting data      fold[2] [ 10%] [tube01.wav          ]                          `  Collecting data      fold[2] [ 11%] [tube03.wav          ]                          *  Collecting data      fold[2] [ 13%] [tubestation07.wav   ]                          ;  Collecting data      fold[2] [ 14%] [quietstreet05.wav   ]                          ,  Collecting data      fold[2] [ 16%] [tubestation04.wav   ]                          `  Collecting data      fold[2] [ 17%] [bus01.wav           ]                          *  Collecting data      fold[2] [ 19%] [busystreet04.wav    ]                          ;  Collecting data      fold[2] [ 20%] [office03.wav        ]                          ,  Collecting data      fold[2] [ 21%] [tubestation05.wav   ]                          `  Collecting data      fold[2] [ 23%] [openairmarket01.wav ]                          *  Collecting data      fold[2] [ 24%] [restaurant08.wav    ]                          ;  Collecting data      fold[2] [ 26%] [supermarket07.wav   ]                          ,  Collecting data      fold[2] [ 27%] [restaurant09.wav    ]                          `  Collecting data      fold[2] [ 29%] [openairmarket05.wav ]                          *  Collecting data      fold[2] [ 30%] [bus03.wav           ]                          ;  Collecting data      fold[2] [ 31%] [park09.wav          ]                          ,  Collecting data      fold[2] [ 33%] [openairmarket08.wav ]                          `  Collecting data      fold[2] [ 34%] [quietstreet04.wav   ]                          *  Collecting data      fold[2] [ 36%] [office10.wav        ]                          ;  Collecting data      fold[2] [ 37%] [busystreet02.wav    ]                          ,  Collecting data      fold[2] [ 39%] [park04.wav          ]                          `  Collecting data      fold[2] [ 40%] [office06.wav        ]                          *  Collecting data      fold[2] [ 41%] [restaurant01.wav    ]                          ;  Collecting data      fold[2] [ 43%] [park02.wav          ]                          ,  Collecting data      fold[2] [ 44%] [tube04.wav          ]                          `  Collecting data      fold[2] [ 46%] [busystreet03.wav    ]                          *  Collecting data      fold[2] [ 47%] [bus04.wav           ]                          ;  Collecting data      fold[2] [ 49%] [restaurant10.wav    ]                          ,  Collecting data      fold[2] [ 50%] [tube05.wav          ]                          `  Collecting data      fold[2] [ 51%] [openairmarket02.wav ]                          *  Collecting data      fold[2] [ 53%] [busystreet09.wav    ]                          ;  Collecting data      fold[2] [ 54%] [openairmarket06.wav ]                          ,  Collecting data      fold[2] [ 56%] [tubestation08.wav   ]                          `  Collecting data      fold[2] [ 57%] [restaurant02.wav    ]                          *  Collecting data      fold[2] [ 59%] [busystreet01.wav    ]                          ;  Collecting data      fold[2] [ 60%] [quietstreet02.wav   ]                          ,  Collecting data      fold[2] [ 61%] [bus02.wav           ]                          `  Collecting data      fold[2] [ 63%] [bus10.wav           ]                          *  Collecting data      fold[2] [ 64%] [office04.wav        ]                          ;  Collecting data      fold[2] [ 66%] [supermarket02.wav   ]                          ,  Collecting data      fold[2] [ 67%] [office05.wav        ]                          `  Collecting data      fold[2] [ 69%] [office02.wav        ]                          *  Collecting data      fold[2] [ 70%] [park01.wav          ]                          ;  Collecting data      fold[2] [ 71%] [supermarket05.wav   ]                          ,  Collecting data      fold[2] [ 73%] [park03.wav          ]                          `  Collecting data      fold[2] [ 74%] [park05.wav          ]                          *  Collecting data      fold[2] [ 76%] [supermarket09.wav   ]                          ;  Collecting data      fold[2] [ 77%] [tubestation09.wav   ]                          ,  Collecting data      fold[2] [ 79%] [quietstreet03.wav   ]                          `  Collecting data      fold[2] [ 80%] [bus05.wav           ]                          *  Collecting data      fold[2] [ 81%] [openairmarket07.wav ]                          ;  Collecting data      fold[2] [ 83%] [restaurant05.wav    ]                          ,  Collecting data      fold[2] [ 84%] [quietstreet10.wav   ]                          `  Collecting data      fold[2] [ 86%] [supermarket01.wav   ]                          *  Collecting data      fold[2] [ 87%] [quietstreet01.wav   ]                          ;  Collecting data      fold[2] [ 89%] [openairmarket03.wav ]                          ,  Collecting data      fold[2] [ 90%] [tube07.wav          ]                          `  Collecting data      fold[2] [ 91%] [quietstreet08.wav   ]                          *  Collecting data      fold[2] [ 93%] [bus08.wav           ]                          ;  Collecting data      fold[2] [ 94%] [tube02.wav          ]                          ,  Collecting data      fold[2] [ 96%] [busystreet05.wav    ]                          `  Collecting data      fold[2] [ 97%] [tube09.wav          ]                          *  Collecting data      fold[2] [ 99%] [supermarket06.wav   ]                          ;  Train models         fold[2]        [busystreet          ]                       ,  Train models         fold[2]        [office              ]                       `  Train models         fold[2]        [restaurant          ]                       *  Train models         fold[2]        [bus                 ]                       ;  Train models         fold[2]        [tube                ]                       ,  Train models         fold[2]        [park                ]                       `  Train models         fold[2]        [supermarket         ]                       *  Train models         fold[2]        [quietstreet         ]                       ;  Train models         fold[2]        [openairmarket       ]                       ,  Train models         fold[2]        [tubestation         ]                     Step #1, avg. loss: 2.68243
-Step #101, avg. loss: 2.18773
-Step #201, epoch #1, avg. loss: 1.69162
-Step #301, epoch #2, avg. loss: 1.32723
-Step #401, epoch #3, avg. loss: 1.16018
-Step #501, epoch #4, avg. loss: 1.04680
-Step #601, epoch #5, avg. loss: 0.95543
-Step #701, epoch #6, avg. loss: 0.88118
-Step #801, epoch #7, avg. loss: 0.82046
-Step #901, epoch #8, avg. loss: 0.77688
-{}
-  `  Collecting data      fold[3] [  0%] [openairmarket10.wav ]                          *  Collecting data      fold[3] [  1%] [openairmarket07.wav ]                          ;  Collecting data      fold[3] [  3%] [bus10.wav           ]                          ,  Collecting data      fold[3] [  4%] [busystreet09.wav    ]                          `  Collecting data      fold[3] [  6%] [office10.wav        ]                          *  Collecting data      fold[3] [  7%] [office05.wav        ]                          ;  Collecting data      fold[3] [  9%] [supermarket09.wav   ]                          ,  Collecting data      fold[3] [ 10%] [restaurant04.wav    ]                          `  Collecting data      fold[3] [ 11%] [office09.wav        ]                          *  Collecting data      fold[3] [ 13%] [tube07.wav          ]                          ;  Collecting data      fold[3] [ 14%] [park05.wav          ]                          ,  Collecting data      fold[3] [ 16%] [park02.wav          ]                          `  Collecting data      fold[3] [ 17%] [office08.wav        ]                          *  Collecting data      fold[3] [ 19%] [tube03.wav          ]                          ;  Collecting data      fold[3] [ 20%] [park06.wav          ]                          ,  Collecting data      fold[3] [ 21%] [quietstreet10.wav   ]                          `  Collecting data      fold[3] [ 23%] [supermarket04.wav   ]                          *  Collecting data      fold[3] [ 24%] [restaurant06.wav    ]                          ;  Collecting data      fold[3] [ 26%] [quietstreet08.wav   ]                          ,  Collecting data      fold[3] [ 27%] [openairmarket06.wav ]                          `  Collecting data      fold[3] [ 29%] [tube02.wav          ]                          *  Collecting data      fold[3] [ 30%] [busystreet07.wav    ]                          ;  Collecting data      fold[3] [ 31%] [busystreet01.wav    ]                          ,  Collecting data      fold[3] [ 33%] [restaurant10.wav    ]                          `  Collecting data      fold[3] [ 34%] [quietstreet01.wav   ]                          *  Collecting data      fold[3] [ 36%] [openairmarket01.wav ]                          ;  Collecting data      fold[3] [ 37%] [tube05.wav          ]                          ,  Collecting data      fold[3] [ 39%] [supermarket06.wav   ]                          `  Collecting data      fold[3] [ 40%] [busystreet10.wav    ]                          *  Collecting data      fold[3] [ 41%] [quietstreet05.wav   ]                          ;  Collecting data      fold[3] [ 43%] [restaurant05.wav    ]                          ,  Collecting data      fold[3] [ 44%] [openairmarket05.wav ]                          `  Collecting data      fold[3] [ 46%] [bus09.wav           ]                          *  Collecting data      fold[3] [ 47%] [park03.wav          ]                          ;  Collecting data      fold[3] [ 49%] [supermarket07.wav   ]                          ,  Collecting data      fold[3] [ 50%] [supermarket03.wav   ]                          `  Collecting data      fold[3] [ 51%] [tube01.wav          ]                          *  Collecting data      fold[3] [ 53%] [tube10.wav          ]                          ;  Collecting data      fold[3] [ 54%] [bus07.wav           ]                          ,  Collecting data      fold[3] [ 56%] [tube09.wav          ]                          `  Collecting data      fold[3] [ 57%] [restaurant02.wav    ]                          *  Collecting data      fold[3] [ 59%] [openairmarket08.wav ]                          ;  Collecting data      fold[3] [ 60%] [quietstreet03.wav   ]                          ,  Collecting data      fold[3] [ 61%] [bus06.wav           ]                          `  Collecting data      fold[3] [ 63%] [bus01.wav           ]                          *  Collecting data      fold[3] [ 64%] [tubestation01.wav   ]                          ;  Collecting data      fold[3] [ 66%] [supermarket08.wav   ]                          ,  Collecting data      fold[3] [ 67%] [bus03.wav           ]                          `  Collecting data      fold[3] [ 69%] [tubestation06.wav   ]                          *  Collecting data      fold[3] [ 70%] [park07.wav          ]                          ;  Collecting data      fold[3] [ 71%] [park01.wav          ]                          ,  Collecting data      fold[3] [ 73%] [tubestation02.wav   ]                          `  Collecting data      fold[3] [ 74%] [supermarket01.wav   ]                          *  Collecting data      fold[3] [ 76%] [office04.wav        ]                          ;  Collecting data      fold[3] [ 77%] [busystreet05.wav    ]                          ,  Collecting data      fold[3] [ 79%] [office01.wav        ]                          `  Collecting data      fold[3] [ 80%] [quietstreet06.wav   ]                          *  Collecting data      fold[3] [ 81%] [tubestation10.wav   ]                          ;  Collecting data      fold[3] [ 83%] [openairmarket09.wav ]                          ,  Collecting data      fold[3] [ 84%] [busystreet02.wav    ]                          `  Collecting data      fold[3] [ 86%] [bus08.wav           ]                          *  Collecting data      fold[3] [ 87%] [tubestation08.wav   ]                          ;  Collecting data      fold[3] [ 89%] [park04.wav          ]                          ,  Collecting data      fold[3] [ 90%] [tubestation07.wav   ]                          `  Collecting data      fold[3] [ 91%] [restaurant09.wav    ]                          *  Collecting data      fold[3] [ 93%] [busystreet08.wav    ]                          ;  Collecting data      fold[3] [ 94%] [restaurant07.wav    ]                          ,  Collecting data      fold[3] [ 96%] [quietstreet09.wav   ]                          `  Collecting data      fold[3] [ 97%] [office06.wav        ]                          *  Collecting data      fold[3] [ 99%] [tubestation03.wav   ]                          ;  Train models         fold[3]        [busystreet          ]                       ,  Train models         fold[3]        [office              ]                       `  Train models         fold[3]        [restaurant          ]                       *  Train models         fold[3]        [bus                 ]                       ;  Train models         fold[3]        [tube                ]                       ,  Train models         fold[3]        [park                ]                       `  Train models         fold[3]        [supermarket         ]                       *  Train models         fold[3]        [quietstreet         ]                       ;  Train models         fold[3]        [tubestation         ]                       ,  Train models         fold[3]        [openairmarket       ]                     Step #1, avg. loss: 2.70290
-Step #101, avg. loss: 2.14242
-Step #201, epoch #1, avg. loss: 1.55890
-Step #301, epoch #2, avg. loss: 1.26778
-Step #401, epoch #3, avg. loss: 1.09804
-Step #501, epoch #4, avg. loss: 0.98216
-Step #601, epoch #5, avg. loss: 0.89978
-Step #701, epoch #6, avg. loss: 0.83374
-Step #801, epoch #7, avg. loss: 0.79021
-Step #901, epoch #8, avg. loss: 0.74932
-{}
-  `  Collecting data      fold[4] [  0%] [supermarket02.wav   ]                          *  Collecting data      fold[4] [  1%] [tube08.wav          ]                          ;  Collecting data      fold[4] [  3%] [busystreet05.wav    ]                          ,  Collecting data      fold[4] [  4%] [quietstreet06.wav   ]                          `  Collecting data      fold[4] [  6%] [quietstreet05.wav   ]                          *  Collecting data      fold[4] [  7%] [openairmarket01.wav ]                          ;  Collecting data      fold[4] [  9%] [office06.wav        ]                          ,  Collecting data      fold[4] [ 10%] [tubestation05.wav   ]                          `  Collecting data      fold[4] [ 11%] [quietstreet07.wav   ]                          *  Collecting data      fold[4] [ 13%] [supermarket03.wav   ]                          ;  Collecting data      fold[4] [ 14%] [office04.wav        ]                          ,  Collecting data      fold[4] [ 16%] [tube02.wav          ]                          `  Collecting data      fold[4] [ 17%] [tube09.wav          ]                          *  Collecting data      fold[4] [ 19%] [openairmarket04.wav ]                          ;  Collecting data      fold[4] [ 20%] [supermarket09.wav   ]                          ,  Collecting data      fold[4] [ 21%] [park10.wav          ]                          `  Collecting data      fold[4] [ 23%] [busystreet10.wav    ]                          *  Collecting data      fold[4] [ 24%] [park04.wav          ]                          ;  Collecting data      fold[4] [ 26%] [park01.wav          ]                          ,  Collecting data      fold[4] [ 27%] [bus09.wav           ]                          `  Collecting data      fold[4] [ 29%] [bus10.wav           ]                          *  Collecting data      fold[4] [ 30%] [restaurant02.wav    ]                          ;  Collecting data      fold[4] [ 31%] [tube10.wav          ]                          ,  Collecting data      fold[4] [ 33%] [park09.wav          ]                          `  Collecting data      fold[4] [ 34%] [tubestation09.wav   ]                          *  Collecting data      fold[4] [ 36%] [office03.wav        ]                          ;  Collecting data      fold[4] [ 37%] [tubestation03.wav   ]                          ,  Collecting data      fold[4] [ 39%] [park08.wav          ]                          `  Collecting data      fold[4] [ 40%] [busystreet06.wav    ]                          *  Collecting data      fold[4] [ 41%] [tubestation10.wav   ]                          ;  Collecting data      fold[4] [ 43%] [supermarket07.wav   ]                          ,  Collecting data      fold[4] [ 44%] [quietstreet09.wav   ]                          `  Collecting data      fold[4] [ 46%] [tube03.wav          ]                          *  Collecting data      fold[4] [ 47%] [restaurant05.wav    ]                          ;  Collecting data      fold[4] [ 49%] [park03.wav          ]                          ,  Collecting data      fold[4] [ 50%] [quietstreet04.wav   ]                          `  Collecting data      fold[4] [ 51%] [quietstreet03.wav   ]                          *  Collecting data      fold[4] [ 53%] [restaurant06.wav    ]                          ;  Collecting data      fold[4] [ 54%] [openairmarket09.wav ]                          ,  Collecting data      fold[4] [ 56%] [park02.wav          ]                          `  Collecting data      fold[4] [ 57%] [restaurant04.wav    ]                          *  Collecting data      fold[4] [ 59%] [office07.wav        ]                          ;  Collecting data      fold[4] [ 60%] [bus08.wav           ]                          ,  Collecting data      fold[4] [ 61%] [supermarket10.wav   ]                          `  Collecting data      fold[4] [ 63%] [office02.wav        ]                          *  Collecting data      fold[4] [ 64%] [tube05.wav          ]                          ;  Collecting data      fold[4] [ 66%] [supermarket08.wav   ]                          ,  Collecting data      fold[4] [ 67%] [tubestation01.wav   ]                          `  Collecting data      fold[4] [ 69%] [openairmarket02.wav ]                          *  Collecting data      fold[4] [ 70%] [tube01.wav          ]                          ;  Collecting data      fold[4] [ 71%] [bus04.wav           ]                          ,  Collecting data      fold[4] [ 73%] [restaurant07.wav    ]                          `  Collecting data      fold[4] [ 74%] [restaurant08.wav    ]                          *  Collecting data      fold[4] [ 76%] [tubestation07.wav   ]                          ;  Collecting data      fold[4] [ 77%] [tubestation08.wav   ]                          ,  Collecting data      fold[4] [ 79%] [busystreet02.wav    ]                          `  Collecting data      fold[4] [ 80%] [busystreet01.wav    ]                          *  Collecting data      fold[4] [ 81%] [office08.wav        ]                          ;  Collecting data      fold[4] [ 83%] [supermarket05.wav   ]                          ,  Collecting data      fold[4] [ 84%] [busystreet04.wav    ]                          `  Collecting data      fold[4] [ 86%] [openairmarket07.wav ]                          *  Collecting data      fold[4] [ 87%] [busystreet03.wav    ]                          ;  Collecting data      fold[4] [ 89%] [bus06.wav           ]                          ,  Collecting data      fold[4] [ 90%] [bus07.wav           ]                          `  Collecting data      fold[4] [ 91%] [bus01.wav           ]                          *  Collecting data      fold[4] [ 93%] [quietstreet08.wav   ]                          ;  Collecting data      fold[4] [ 94%] [openairmarket10.wav ]                          ,  Collecting data      fold[4] [ 96%] [office05.wav        ]                          `  Collecting data      fold[4] [ 97%] [restaurant03.wav    ]                          *  Collecting data      fold[4] [ 99%] [openairmarket06.wav ]                          ;  Train models         fold[4]        [busystreet          ]                       ,  Train models         fold[4]        [office              ]                       `  Train models         fold[4]        [restaurant          ]                       *  Train models         fold[4]        [bus                 ]                       ;  Train models         fold[4]        [tube                ]                       ,  Train models         fold[4]        [park                ]                       `  Train models         fold[4]        [supermarket         ]                       *  Train models         fold[4]        [quietstreet         ]                       ;  Train models         fold[4]        [tubestation         ]                       ,  Train models         fold[4]        [openairmarket       ]                     Step #1, avg. loss: 2.68667
-Step #101, avg. loss: 2.16857
-Step #201, epoch #1, avg. loss: 1.65914
-Step #301, epoch #2, avg. loss: 1.27630
-Step #401, epoch #3, avg. loss: 1.09198
-Step #501, epoch #4, avg. loss: 0.98355
-Step #601, epoch #5, avg. loss: 0.89102
-Step #701, epoch #6, avg. loss: 0.82695
-Step #801, epoch #7, avg. loss: 0.77891
-Step #901, epoch #8, avg. loss: 0.73739
-{}
-  `  Collecting data      fold[5] [  0%] [busystreet06.wav    ]                          *  Collecting data      fold[5] [  1%] [supermarket03.wav   ]                          ;  Collecting data      fold[5] [  3%] [quietstreet01.wav   ]                          ,  Collecting data      fold[5] [  4%] [busystreet07.wav    ]                          `  Collecting data      fold[5] [  6%] [supermarket05.wav   ]                          *  Collecting data      fold[5] [  7%] [restaurant08.wav    ]                          ;  Collecting data      fold[5] [  9%] [park10.wav          ]                          ,  Collecting data      fold[5] [ 10%] [supermarket06.wav   ]                          `  Collecting data      fold[5] [ 11%] [supermarket08.wav   ]                          *  Collecting data      fold[5] [ 13%] [tubestation03.wav   ]                          ;  Collecting data      fold[5] [ 14%] [park02.wav          ]                          ,  Collecting data      fold[5] [ 16%] [bus01.wav           ]                          `  Collecting data      fold[5] [ 17%] [supermarket02.wav   ]                          *  Collecting data      fold[5] [ 19%] [quietstreet05.wav   ]                          ;  Collecting data      fold[5] [ 20%] [openairmarket06.wav ]                          ,  Collecting data      fold[5] [ 21%] [openairmarket03.wav ]                          `  Collecting data      fold[5] [ 23%] [openairmarket09.wav ]                          *  Collecting data      fold[5] [ 24%] [busystreet01.wav    ]                          ;  Collecting data      fold[5] [ 26%] [office07.wav        ]                          ,  Collecting data      fold[5] [ 27%] [tube04.wav          ]                          `  Collecting data      fold[5] [ 29%] [park01.wav          ]                          *  Collecting data      fold[5] [ 30%] [restaurant05.wav    ]                          ;  Collecting data      fold[5] [ 31%] [bus05.wav           ]                          ,  Collecting data      fold[5] [ 33%] [tube10.wav          ]                          `  Collecting data      fold[5] [ 34%] [openairmarket08.wav ]                          *  Collecting data      fold[5] [ 36%] [tubestation08.wav   ]                          ;  Collecting data      fold[5] [ 37%] [restaurant01.wav    ]                          ,  Collecting data      fold[5] [ 39%] [restaurant03.wav    ]                          `  Collecting data      fold[5] [ 40%] [park08.wav          ]                          *  Collecting data      fold[5] [ 41%] [restaurant04.wav    ]                          ;  Collecting data      fold[5] [ 43%] [bus10.wav           ]                          ,  Collecting data      fold[5] [ 44%] [bus07.wav           ]                          `  Collecting data      fold[5] [ 46%] [office06.wav        ]                          *  Collecting data      fold[5] [ 47%] [restaurant02.wav    ]                          ;  Collecting data      fold[5] [ 49%] [quietstreet04.wav   ]                          ,  Collecting data      fold[5] [ 50%] [office02.wav        ]                          `  Collecting data      fold[5] [ 51%] [office04.wav        ]                          *  Collecting data      fold[5] [ 53%] [busystreet02.wav    ]                          ;  Collecting data      fold[5] [ 54%] [restaurant06.wav    ]                          ,  Collecting data      fold[5] [ 56%] [quietstreet06.wav   ]                          `  Collecting data      fold[5] [ 57%] [bus09.wav           ]                          *  Collecting data      fold[5] [ 59%] [tubestation04.wav   ]                          ;  Collecting data      fold[5] [ 60%] [office01.wav        ]                          ,  Collecting data      fold[5] [ 61%] [openairmarket05.wav ]                          `  Collecting data      fold[5] [ 63%] [bus04.wav           ]                          *  Collecting data      fold[5] [ 64%] [tubestation10.wav   ]                          ;  Collecting data      fold[5] [ 66%] [office10.wav        ]                          ,  Collecting data      fold[5] [ 67%] [busystreet04.wav    ]                          `  Collecting data      fold[5] [ 69%] [quietstreet03.wav   ]                          *  Collecting data      fold[5] [ 70%] [supermarket09.wav   ]                          ;  Collecting data      fold[5] [ 71%] [tube08.wav          ]                          ,  Collecting data      fold[5] [ 73%] [supermarket07.wav   ]                          `  Collecting data      fold[5] [ 74%] [tubestation09.wav   ]                          *  Collecting data      fold[5] [ 76%] [tubestation02.wav   ]                          ;  Collecting data      fold[5] [ 77%] [park03.wav          ]                          ,  Collecting data      fold[5] [ 79%] [tube01.wav          ]                          `  Collecting data      fold[5] [ 80%] [tube07.wav          ]                          *  Collecting data      fold[5] [ 81%] [tube05.wav          ]                          ;  Collecting data      fold[5] [ 83%] [quietstreet09.wav   ]                          ,  Collecting data      fold[5] [ 84%] [bus03.wav           ]                          `  Collecting data      fold[5] [ 86%] [office05.wav        ]                          *  Collecting data      fold[5] [ 87%] [openairmarket01.wav ]                          ;  Collecting data      fold[5] [ 89%] [quietstreet08.wav   ]                          ,  Collecting data      fold[5] [ 90%] [openairmarket02.wav ]                          `  Collecting data      fold[5] [ 91%] [park06.wav          ]                          *  Collecting data      fold[5] [ 93%] [tubestation06.wav   ]                          ;  Collecting data      fold[5] [ 94%] [busystreet08.wav    ]                          ,  Collecting data      fold[5] [ 96%] [busystreet10.wav    ]                          `  Collecting data      fold[5] [ 97%] [tube02.wav          ]                          *  Collecting data      fold[5] [ 99%] [park09.wav          ]                          ;  Train models         fold[5]        [busystreet          ]                       ,  Train models         fold[5]        [office              ]                       `  Train models         fold[5]        [restaurant          ]                       *  Train models         fold[5]        [bus                 ]                       ;  Train models         fold[5]        [tube                ]                       ,  Train models         fold[5]        [park                ]                       `  Train models         fold[5]        [supermarket         ]                       *  Train models         fold[5]        [quietstreet         ]                       ;  Train models         fold[5]        [openairmarket       ]                       ,  Train models         fold[5]        [tubestation         ]                     Step #1, avg. loss: 2.68151
-Step #101, avg. loss: 2.20762
-Step #201, epoch #1, avg. loss: 1.65815
-Step #301, epoch #2, avg. loss: 1.30555
-Step #401, epoch #3, avg. loss: 1.14478
-Step #501, epoch #4, avg. loss: 1.03581
-Step #601, epoch #5, avg. loss: 0.94426
-Step #701, epoch #6, avg. loss: 0.87969
-Step #801, epoch #7, avg. loss: 0.81393
-Step #901, epoch #8, avg. loss: 0.76439
-{}
-  [Done]                                                                             
- 
-System testing
-================================
-  `  Testing              fold[1] [  0%] [supermarket09.wav   ]                        [ -6612.05664062  -7459.38818359 -13860.20605469  -2172.80053711
- -12437.8828125  -10309.49023438  -4212.20654297  -1512.02905273
-  -8773.48730469  -7384.03466797]
-  *  Testing              fold[1] [  3%] [tubestation10.wav   ]                        [ -4499.62207031  -7469.21923828 -18016.58984375  -7277.90820312
- -14622.38085938 -10368.68164062 -10261.27246094 -12042.15039062
-  -3102.46264648  -1946.26623535]
-  ;  Testing              fold[1] [  7%] [quietstreet08.wav   ]                        [-25228.04296875 -18100.22070312  -6658.90429688 -10707.23828125
-  -5993.2265625    -452.59835815 -15244.93066406  -7492.25146484
- -13356.86914062  -9434.87304688]
-  ,  Testing              fold[1] [ 10%] [office10.wav        ]                        [-35861.53515625 -26631.98828125   -613.87268066 -17601.62695312
-  -3130.54296875  -5125.1875     -22868.41210938  -7515.75146484
- -19693.90429688 -11877.13964844]
-  `  Testing              fold[1] [ 13%] [bus01.wav           ]                        [  -217.99836731 -13754.70996094 -24866.06835938  -8770.76269531
- -18637.2578125  -21746.57226562 -14882.98144531  -6587.01025391
- -12684.89941406 -12860.29003906]
-  *  Testing              fold[1] [ 17%] [restaurant05.wav    ]                        [ -9591.796875    -6536.64404297 -12449.94238281  -2965.09985352
- -10194.14941406 -11708.01074219  -1579.87780762  -2694.92480469
- -11771.13085938  -8334.04492188]
-  ;  Testing              fold[1] [ 20%] [busystreet05.wav    ]                        [-15593.50390625  -5141.63476562 -11539.94335938  -5983.42578125
- -10910.43164062 -10428.61816406  -3983.89208984  -3458.79956055
- -14598.5546875   -6772.67285156]
-  ,  Testing              fold[1] [ 23%] [openairmarket04.wav ]                        [-10846.21777344 -10027.48242188  -8739.9140625   -1922.84472656
-  -8710.73730469  -7418.37158203  -3258.88818359  -3208.41357422
-  -7494.28173828  -6780.69921875]
-  `  Testing              fold[1] [ 27%] [quietstreet01.wav   ]                        [-24715.33203125 -21979.140625    -5123.56787109 -12418.43261719
-  -4593.71582031   -480.29550171 -16619.15820312  -6402.79638672
- -13908.74414062  -9559.1484375 ]
-  *  Testing              fold[1] [ 30%] [supermarket05.wav   ]                        [ -9654.58007812  -8698.63671875 -13421.69726562  -4512.29199219
- -10543.47753906 -12331.25488281  -3344.84692383   -679.74066162
- -13138.6015625   -9167.50292969]
-  ;  Testing              fold[1] [ 33%] [openairmarket01.wav ]                        [ -7459.05810547  -4312.63525391 -14153.4765625   -1448.78088379
- -12799.3984375  -10295.45117188  -4697.21240234  -3315.33837891
-  -9972.40234375  -7632.00976562]
-  ,  Testing              fold[1] [ 37%] [office07.wav        ]                        [-34065.046875   -28497.5546875    -457.65963745 -18654.796875
-  -4583.92382812  -6680.21435547 -21562.20507812  -7285.55859375
- -19556.06054688 -10961.46582031]
-  `  Testing              fold[1] [ 40%] [tube07.wav          ]                        [ -8119.64941406  -7547.53271484 -17510.0625      -8820.06640625
- -12413.12988281  -7305.43652344 -11666.94042969 -16116.32910156
-  -1171.41064453  -2852.67333984]
-  *  Testing              fold[1] [ 43%] [tubestation05.wav   ]                        [-13095.828125   -10944.51660156 -11860.546875    -2750.46484375
- -11822.07617188  -9616.32519531  -2581.06835938  -3184.12890625
-  -7903.77441406  -6849.76269531]
-  ;  Testing              fold[1] [ 47%] [tubestation07.wav   ]                        [-14593.46386719 -12139.90820312  -6042.90673828  -8532.65429688
-  -5564.15332031  -5507.61816406  -3759.97192383  -1861.99975586
-  -9368.27148438  -4784.37890625]
-  ,  Testing              fold[1] [ 50%] [supermarket02.wav   ]                        [-17565.30859375 -21322.39257812  -6222.30273438  -7451.98486328
-  -8574.13378906  -6118.89746094  -8458.5234375    -762.503479
- -11784.32421875  -8806.46582031]
-  `  Testing              fold[1] [ 53%] [busystreet08.wav    ]                        [-11287.81835938   -214.7822113  -23657.86914062  -4975.99609375
- -21017.5703125  -19700.703125    -8134.92773438  -7483.58154297
- -19273.48046875 -11941.31445312]
-  *  Testing              fold[1] [ 57%] [bus04.wav           ]                        [  -269.14825439 -10777.86816406 -28033.9765625   -8333.37597656
- -21034.72851562 -25013.68164062 -14393.265625    -7393.88769531
- -14741.10546875 -14294.23730469]
-  ;  Testing              fold[1] [ 60%] [park04.wav          ]                        [-19894.30273438 -15247.05859375  -2873.5222168  -10789.96386719
-  -2176.30810547  -2830.77294922  -7735.77050781  -2612.2331543
- -11259.73535156  -6509.25976562]
-  ,  Testing              fold[1] [ 63%] [park09.wav          ]                        [-14271.50878906 -11730.44140625  -6546.70166016  -4389.74121094
-   -613.48516846  -5869.97851562  -7187.66992188  -5975.40527344
-  -6474.55712891  -9931.56640625]
-  `  Testing              fold[1] [ 67%] [busystreet07.wav    ]                        [-10891.47753906   -237.42835999 -26266.20898438  -5715.69775391
- -22367.140625   -22392.32421875  -9903.04296875  -8373.08007812
- -19579.20117188 -12619.99316406]
-  *  Testing              fold[1] [ 70%] [restaurant01.wav    ]                        [ -9008.65527344  -6796.31738281 -12962.84863281  -3588.23730469
- -13260.21484375 -10497.04101562  -1010.10314941  -4023.13964844
-  -8432.72753906  -5714.40820312]
-  ;  Testing              fold[1] [ 73%] [bus06.wav           ]                        [ -1422.77307129 -12080.86621094 -18968.10546875  -3241.56982422
- -15874.328125   -13103.0234375  -11758.66992188  -5700.7109375
-  -9452.77539062 -10842.46191406]
-  ,  Testing              fold[1] [ 77%] [tube01.wav          ]                        [ -6907.91992188  -9080.390625   -13380.72460938  -4816.80908203
- -10039.79492188  -6733.07177734  -9550.73632812  -9848.35351562
-  -2777.05297852  -3553.72094727]
-  `  Testing              fold[1] [ 80%] [restaurant10.wav    ]                        [-10974.98339844  -9876.69140625 -10450.984375    -1508.19470215
- -10127.28613281  -6792.06152344  -4892.921875    -7625.03710938
-  -5555.3046875   -5287.48388672]
-  *  Testing              fold[1] [ 83%] [tube03.wav          ]                        [ -2174.2043457  -11418.02050781 -18240.91992188  -8692.36035156
- -14775.23144531 -11878.32617188 -14689.671875   -13988.01464844
-  -1632.5916748   -3530.75756836]
-  ;  Testing              fold[1] [ 87%] [office08.wav        ]                        [-21230.21679688 -19811.015625    -1303.79162598 -12840.18261719
-  -3586.80908203  -3560.27929688 -11723.48242188  -4716.98730469
- -11721.50292969  -6498.52441406]
-  ,  Testing              fold[1] [ 90%] [quietstreet05.wav   ]                        [-22083.1875     -18563.11328125  -3786.94091797 -11814.08300781
-  -4693.85791016   -750.27838135 -10354.0859375   -3858.83178711
- -10516.20996094  -6982.13671875]
-  `  Testing              fold[1] [ 93%] [park10.wav          ]                        [-22613.70117188 -22182.984375    -6491.60546875  -8990.75585938
-  -1852.85949707  -1584.81518555 -18114.54492188  -7489.88916016
-  -9686.47851562  -9635.72949219]
-  *  Testing              fold[1] [ 97%] [openairmarket05.wav ]                        [ -9719.29394531  -5804.53417969 -14520.67089844  -1187.65844727
- -13824.18945312 -13456.73144531  -2608.51123047  -4044.31982422
- -13529.50488281  -9514.13671875]
-  ;  Testing              fold[2] [  0%] [bus07.wav           ]                        [   -96.64225769 -15507.7109375  -23592.63671875 -10509.70507812
- -16453.30273438 -22574.88476562 -13529.23535156  -6461.04101562
- -12134.34960938 -13499.90917969]
-  ,  Testing              fold[2] [  3%] [bus06.wav           ]                        [ -1459.71508789 -12941.52539062 -18578.5234375   -3328.59057617
- -15557.00683594 -12705.984375   -11923.18652344  -5687.01660156
-  -9229.32324219 -10863.71777344]
-  `  Testing              fold[2] [  7%] [supermarket04.wav   ]                        [-16166.64453125 -12456.12792969  -6581.99511719  -6292.74462891
-  -6000.93261719  -6595.51220703  -3466.12719727  -2657.30957031
- -10683.65625     -6830.92919922]
-  *  Testing              fold[2] [ 10%] [quietstreet09.wav   ]                        [-18326.296875   -13484.40234375  -8182.27636719  -6437.71386719
-  -5508.12597656  -1406.32702637 -12849.87304688  -7262.01855469
-  -9611.59667969  -7522.60498047]
-  ;  Testing              fold[2] [ 13%] [quietstreet06.wav   ]                        [-22177.26953125 -15054.23242188  -7888.21435547  -8945.18457031
-  -6219.81396484   -776.61468506 -12950.9140625   -7448.56494141
- -11474.20703125  -8038.41357422]
-  ,  Testing              fold[2] [ 17%] [park08.wav          ]                        [-36606.4375     -24936.68164062  -1859.15722656 -19112.55859375
-  -1548.78918457  -5124.31445312 -23652.02539062  -7979.39599609
- -18748.68164062 -11400.71582031]
-  `  Testing              fold[2] [ 20%] [openairmarket04.wav ]                        [-10988.33984375 -10649.40136719  -8332.41308594  -1969.40722656
-  -8345.83203125  -7184.49755859  -3647.53955078  -3130.64086914
-  -7399.93896484  -6822.33496094]
-  *  Testing              fold[2] [ 23%] [tube08.wav          ]                        [ -4124.90429688 -11866.43847656 -13086.35839844  -7142.49609375
- -11705.75195312  -9023.21289062  -9304.10253906 -10554.92285156
-  -1763.36132812  -2756.38793945]
-  ;  Testing              fold[2] [ 27%] [restaurant04.wav    ]                        [-10770.32910156 -19075.90039062  -8238.38378906  -4405.52587891
-  -8814.7109375   -8817.01367188  -1832.89221191  -1982.56726074
-  -5584.61425781  -7649.51611328]
-  ,  Testing              fold[2] [ 30%] [busystreet10.wav    ]                        [-12934.11035156   -517.92193604 -15346.29101562  -4636.01757812
- -11490.26757812  -7214.33007812  -6725.89160156  -8532.19921875
- -11308.99316406  -7476.75732422]
-  `  Testing              fold[2] [ 33%] [tubestation02.wav   ]                        [ -7466.93457031  -7374.72802734 -11413.81933594  -4106.71386719
- -10141.02539062  -5967.01855469  -5951.28271484  -7191.54296875
-  -4253.21533203  -3146.3840332 ]
-  *  Testing              fold[2] [ 37%] [tubestation06.wav   ]                        [-14403.72460938 -11169.59179688  -6284.03369141 -10595.40917969
-  -6121.6484375   -6315.22363281  -5364.05859375  -3417.00390625
-  -7892.43994141  -2281.71484375]
-  ;  Testing              fold[2] [ 40%] [tube10.wav          ]                        [ -3993.34033203 -11504.64160156 -18638.67578125  -9458.78515625
- -13244.81445312 -12983.85839844 -15151.22363281 -14439.671875
-  -1615.57568359  -3987.23583984]
-  ,  Testing              fold[2] [ 43%] [restaurant07.wav    ]                        [ -9514.75878906  -9073.29882812  -9856.95507812  -3140.71484375
- -10173.13769531 -10855.66894531  -1414.75915527  -4675.47021484
-  -9345.83300781  -6500.73583984]
-  `  Testing              fold[2] [ 47%] [busystreet06.wav    ]                        [-10571.81542969   -875.27563477 -17217.41015625  -3424.53442383
- -12221.46582031  -8516.140625    -7784.70605469  -7000.29833984
- -11523.80761719  -9519.5546875 ]
-  *  Testing              fold[2] [ 50%] [office08.wav        ]                        [-22826.15039062 -20861.29492188  -1091.33422852 -13833.82910156
-  -3522.640625    -4117.42822266 -13182.78125     -5305.62304688
- -12400.11816406  -6848.13037109]
-  ;  Testing              fold[2] [ 53%] [tubestation01.wav   ]                        [ -6117.11328125  -8788.32910156 -12717.77832031  -5552.01367188
- -12903.93554688  -9353.97265625  -4499.04394531  -6343.70556641
-  -4092.03637695  -2685.46166992]
-  ,  Testing              fold[2] [ 57%] [park07.wav          ]                        [-31901.99023438 -22730.32617188  -7852.23095703 -15089.30859375
-  -4717.38330078   -230.1987915  -21789.65234375  -9857.31152344
- -16746.56835938 -12638.41894531]
-  `  Testing              fold[2] [ 60%] [openairmarket10.wav ]                        [-10444.67285156 -10173.26171875 -13505.35742188   -577.23388672
- -10331.3515625   -7268.65478516  -9825.99707031  -7777.08007812
-  -6450.64355469  -7642.25048828]
-  *  Testing              fold[2] [ 63%] [supermarket08.wav   ]                        [ -7008.92236328 -13210.45507812 -11619.89746094  -7895.44921875
-  -8864.25195312 -12565.55371094  -5360.00830078   -669.26220703
- -10249.8125      -7426.44287109]
-  ;  Testing              fold[2] [ 67%] [busystreet07.wav    ]                        [-10762.40332031   -290.89575195 -24926.125       -5591.12402344
- -21205.16210938 -21263.75390625  -9301.78515625  -7986.73388672
- -18659.16210938 -11817.72167969]
-  ,  Testing              fold[2] [ 70%] [openairmarket09.wav ]                        [-11968.16015625 -11163.02441406 -11608.27050781   -476.49206543
-  -8038.45263672  -5857.05175781 -10360.8359375   -7410.67480469
-  -6286.37255859  -8035.34130859]
-  `  Testing              fold[2] [ 73%] [bus09.wav           ]                        [  -246.40126038 -17940.93554688 -21985.8828125   -6126.63525391
- -17423.18164062 -13935.01660156 -15586.85644531  -9739.75976562
-  -9005.20019531 -12501.80957031]
-  *  Testing              fold[2] [ 77%] [restaurant06.wav    ]                        [-10731.39453125  -9369.828125    -7612.88623047  -4271.41748047
-  -7834.62841797  -8591.109375    -1441.91882324  -3535.09716797
-  -8973.81347656  -5663.54882812]
-  ;  Testing              fold[2] [ 80%] [tube06.wav          ]                        [ -8046.79150391 -12471.94628906  -7776.93554688  -9977.63867188
-  -5502.18164062  -9893.98828125  -4590.99511719  -2475.31176758
-  -5875.94140625  -3114.45874023]
-  ,  Testing              fold[2] [ 83%] [quietstreet07.wav   ]                        [-28126.69921875 -23088.34765625  -6567.16748047 -13047.97167969
-  -4338.96875      -539.359375   -19897.76367188  -9323.50878906
- -13301.41894531 -10196.66308594]
-  `  Testing              fold[2] [ 87%] [park06.wav          ]                        [-20688.17382812 -16469.28515625  -3469.55810547 -12297.5234375
-  -2225.71557617  -2083.72753906  -8853.16601562  -2940.05639648
- -10182.03320312  -6131.22900391]
-  *  Testing              fold[2] [ 90%] [supermarket10.wav   ]                        [-12569.26367188  -8522.86914062  -9692.25683594   -869.4175415
-  -8977.79882812  -4730.72802734  -6102.52148438  -5405.56396484
-  -6448.06542969  -5399.62109375]
-  ;  Testing              fold[2] [ 93%] [office07.wav        ]                        [-35696.265625   -29813.26171875   -397.91049194 -19737.80664062
-  -4813.19287109  -7461.24462891 -23052.15429688  -7964.25048828
- -20332.09179688 -11380.84863281]
-  ,  Testing              fold[2] [ 97%] [office09.wav        ]                        [-40906.0859375  -35287.20703125   -118.39221191 -22973.26757812
-  -6181.53222656  -9332.7421875  -27398.71289062  -9696.69042969
- -23231.66796875 -12924.64453125]
-  `  Testing              fold[3] [  0%] [office07.wav        ]                        [-34972.1796875  -29913.25585938   -346.56866455 -19532.75585938
-  -5126.72558594  -7522.52148438 -22283.4765625   -7644.52636719
- -20216.56445312 -11260.91601562]
-  *  Testing              fold[3] [  3%] [restaurant01.wav    ]                        [ -9471.81445312  -7514.91113281 -12743.67578125  -3764.42114258
- -13199.30273438 -10311.16992188   -929.90814209  -3964.73266602
-  -8166.71484375  -5632.33056641]
-  ;  Testing              fold[3] [  7%] [supermarket02.wav   ]                        [-17706.54101562 -22240.84570312  -6289.70068359  -7596.84716797
-  -8869.8515625   -6676.57373047  -8606.12597656   -687.06726074
- -12035.59472656  -9076.55175781]
-  ,  Testing              fold[3] [ 10%] [tubestation04.wav   ]                        [ -9599.2265625   -6720.43212891 -10988.65039062  -7962.42675781
-  -9021.85546875  -5665.54003906  -7678.3671875  -10156.45214844
-  -3768.26611328  -1629.31115723]
-  `  Testing              fold[3] [ 13%] [tube06.wav          ]                        [ -8015.21777344 -12127.83886719  -8068.55615234  -9722.97460938
-  -5759.51757812  -9903.33789062  -4684.21679688  -2528.56811523
-  -5912.34863281  -3180.69262695]
-  *  Testing              fold[3] [ 17%] [busystreet04.wav    ]                        [ -9286.76269531   -685.85998535 -18642.70507812  -4464.26953125
- -14253.94921875 -10697.28515625  -5470.08007812  -6354.85644531
- -11993.97949219  -8349.21582031]
-  ;  Testing              fold[3] [ 20%] [quietstreet02.wav   ]                        [-14423.65234375 -12525.55273438  -6974.28027344  -3614.05883789
-  -5961.81640625  -5715.40917969  -7287.59667969  -1635.4909668
-  -8320.10449219  -7423.26953125]
-  ,  Testing              fold[3] [ 23%] [park10.wav          ]                        [-23966.65234375 -22956.70898438  -6759.06542969  -9626.40917969
-  -1990.09106445  -1387.39477539 -19191.7109375   -7666.04541016
- -10676.02734375 -10299.921875  ]
-  `  Testing              fold[3] [ 27%] [busystreet03.wav    ]                        [-11695.75097656  -1159.67834473 -19821.10742188  -5090.78613281
- -17117.54101562 -17151.6953125   -6279.24755859  -6174.07128906
- -16303.28417969  -9216.71191406]
-  *  Testing              fold[3] [ 30%] [quietstreet04.wav   ]                        [-21718.93554688 -17622.86328125  -5424.15722656 -11717.10449219
-  -4916.64160156   -563.35131836  -9654.19921875  -3866.49633789
-  -9945.48730469  -7286.14306641]
-  ;  Testing              fold[3] [ 33%] [quietstreet07.wav   ]                        [-27645.484375   -22794.53515625  -7116.34521484 -12461.16113281
-  -4967.75341797   -448.7020874  -19567.78710938  -9064.57714844
- -13421.75585938 -10398.33398438]
-  ,  Testing              fold[3] [ 37%] [busystreet06.wav    ]                        [-10711.60253906   -904.93371582 -17224.87304688  -3442.25561523
- -12527.03515625  -8581.28320312  -7384.22509766  -6873.37451172
- -11574.76074219  -9343.30957031]
-  `  Testing              fold[3] [ 40%] [restaurant03.wav    ]                        [-11124.81933594 -12132.80175781  -9366.75683594  -6235.44921875
-  -7356.24609375  -8669.66210938  -2233.67822266  -1247.38134766
- -10293.20605469  -7707.26855469]
-  *  Testing              fold[3] [ 43%] [supermarket10.wav   ]                        [-12609.8203125   -8046.62207031  -9929.2421875    -934.54797363
-  -9385.81542969  -5124.94335938  -5321.89208984  -5139.58154297
-  -6765.30761719  -5364.85986328]
-  ;  Testing              fold[3] [ 47%] [openairmarket03.wav ]                        [-12666.99902344 -10531.29785156 -12002.7890625    -933.59210205
- -10518.35546875  -9340.02148438  -5753.43359375  -3713.421875
-  -9449.21582031  -9743.96582031]
-  ,  Testing              fold[3] [ 50%] [openairmarket04.wav ]                        [-11208.95214844 -10810.10058594  -8785.43457031  -1924.0032959
-  -8740.36132812  -7698.15673828  -3505.59814453  -3039.06298828
-  -7615.26904297  -7079.17675781]
-  `  Testing              fold[3] [ 53%] [park08.wav          ]                        [-36064.734375   -24935.45117188  -1720.25976562 -18857.234375
-  -1783.21374512  -5107.62011719 -23011.5546875   -7585.70117188
- -18617.79882812 -11161.78515625]
-  *  Testing              fold[3] [ 57%] [bus02.wav           ]                        [  -798.53369141  -8249.25488281 -26054.796875    -6827.80029297
- -20293.59960938 -21745.44726562 -14233.13769531  -6203.48486328
- -13087.25292969 -10661.38867188]
-  ;  Testing              fold[3] [ 60%] [tubestation05.wav   ]                        [-13310.16894531 -11607.49121094 -12177.81738281  -2698.00634766
- -12137.88867188 -10080.36425781  -2763.57714844  -3024.19189453
-  -8022.30957031  -7124.54052734]
-  ,  Testing              fold[3] [ 63%] [supermarket05.wav   ]                        [ -9883.80273438  -8807.99121094 -12923.76367188  -4491.40527344
- -10362.84570312 -11777.68261719  -3301.51904297   -688.5770874
- -12691.16894531  -8803.00683594]
-  `  Testing              fold[3] [ 67%] [park09.wav          ]                        [-14550.00292969 -12299.74707031  -6644.19433594  -4418.70849609
-   -594.8493042   -6338.91113281  -7252.11132812  -5868.00927734
-  -6681.03125    -10284.02636719]
-  *  Testing              fold[3] [ 70%] [tube04.wav          ]                        [ -6013.60498047 -11586.51464844 -19659.01953125 -13352.6953125
- -13256.47949219 -11969.95996094 -18010.13085938 -18194.63476562
-   -527.78051758  -3584.87988281]
-  ;  Testing              fold[3] [ 73%] [bus04.wav           ]                        [  -274.72619629 -10619.6796875  -27771.47070312  -8416.49121094
- -20909.66992188 -24586.32421875 -14423.65625     -7533.28466797
- -14424.10839844 -13913.49902344]
-  ,  Testing              fold[3] [ 77%] [bus05.wav           ]                        [  -350.61752319 -11331.30175781 -23246.92773438  -8147.39697266
- -16987.4921875  -17060.26171875 -16881.29882812 -11657.95214844
-  -7579.7265625  -10927.27832031]
-  `  Testing              fold[3] [ 80%] [tubestation09.wav   ]                        [ -8093.38964844  -7230.67138672 -14168.81542969  -8288.9140625
- -14050.99804688  -7499.15917969  -5386.46972656 -11442.96777344
-  -4305.15820312   -918.38458252]
-  *  Testing              fold[3] [ 83%] [openairmarket02.wav ]                        [ -9330.27441406  -8557.49902344 -12955.40039062  -1581.24536133
- -11601.68261719  -8898.30664062  -5925.30957031  -2486.11083984
-  -9026.02636719  -7870.60498047]
-  ;  Testing              fold[3] [ 87%] [tube08.wav          ]                        [ -4224.44238281 -11623.30371094 -13154.21289062  -7018.00537109
- -12065.98730469  -8994.43164062  -8805.40136719 -10342.60253906
-  -1932.84899902  -2590.27392578]
-  ,  Testing              fold[3] [ 90%] [office03.wav        ]                        [-26900.20117188 -21143.98242188  -2708.63720703 -13155.56347656
-  -4023.9934082   -2002.52685547 -14423.20507812  -4950.18896484
- -13032.35351562  -8602.98144531]
-  `  Testing              fold[3] [ 93%] [restaurant08.wav    ]                        [-13644.61816406  -5872.68164062 -12275.13867188  -4007.14160156
- -14219.29492188  -6615.50244141   -998.01031494  -9167.09277344
- -10723.70605469  -6071.03466797]
-  *  Testing              fold[3] [ 97%] [office02.wav        ]                        [ -4.23206094e+04  -4.00906758e+04  -2.75522499e+01  -2.60971055e+04
-  -8.40168262e+03  -1.22194521e+04  -2.84959609e+04  -1.08040010e+04
-  -2.50693145e+04  -1.39228564e+04]
-  ;  Testing              fold[4] [  0%] [office01.wav        ]                        [-28991.1328125  -26278.48828125   -679.0703125  -16891.94921875
-  -4945.43652344  -7036.94921875 -17584.953125    -6070.79785156
- -16328.87695312  -8957.22753906]
-  ,  Testing              fold[4] [  3%] [supermarket06.wav   ]                        [-13340.01367188 -12182.125      -10107.07226562  -6306.22412109
-  -7926.57617188  -9181.02441406  -3342.12109375   -653.11999512
- -11535.22460938  -8082.39648438]
-  `  Testing              fold[4] [  7%] [bus03.wav           ]                        [  -715.96893311  -9407.30273438 -22623.24804688  -7890.67480469
- -17382.25390625 -17495.65039062 -12509.34863281  -8685.734375
-  -7729.78857422  -8088.54199219]
-  *  Testing              fold[4] [ 10%] [tube04.wav          ]                        [ -6389.12109375 -11989.55761719 -19843.7421875  -13901.48242188
- -13506.30859375 -12428.57910156 -18535.77929688 -18717.80664062
-   -478.07867432  -3507.0559082 ]
-  ;  Testing              fold[4] [ 13%] [tubestation02.wav   ]                        [ -7602.86621094  -6786.95654297 -11753.80957031  -4474.24267578
- -10463.31542969  -5978.58300781  -5737.07324219  -7673.93652344
-  -4388.203125    -2971.31762695]
-  ,  Testing              fold[4] [ 17%] [tube07.wav          ]                        [ -8488.38964844  -8054.53271484 -17903.47851562  -9444.38671875
- -12642.54492188  -7602.45361328 -12334.61230469 -17019.58398438
-  -1006.36114502  -2980.02758789]
-  `  Testing              fold[4] [ 20%] [park05.wav          ]                        [-28847.21679688 -22204.73828125  -6496.9609375  -13944.390625
-  -3650.359375     -380.54266357 -20271.16210938  -8990.37792969
- -14857.53125    -11448.96386719]
-  *  Testing              fold[4] [ 23%] [openairmarket03.wav ]                        [-12187.73730469  -9203.59472656 -12164.67285156  -1013.92749023
- -10697.53613281  -8877.21289062  -5650.94433594  -4078.00732422
-  -9487.578125    -9314.64941406]
-  ;  Testing              fold[4] [ 27%] [busystreet08.wav    ]                        [-11676.56835938   -180.97937012 -23666.47265625  -5191.19628906
- -21115.29101562 -19600.33984375  -8362.63476562  -7975.29101562
- -19148.03710938 -11794.31738281]
-  ,  Testing              fold[4] [ 30%] [tube06.wav          ]                        [ -7595.89794922 -11690.91210938  -8542.16992188  -9677.59667969
-  -6066.27490234 -10391.48730469  -4824.33935547  -2742.52246094
-  -5930.62060547  -3105.52319336]
-  `  Testing              fold[4] [ 33%] [park07.wav          ]                        [-31333.05078125 -22260.55664062  -8163.84814453 -14467.72851562
-  -5355.48291016   -177.43951416 -21222.27734375  -9940.71679688
- -16458.9296875  -12432.84667969]
-  *  Testing              fold[4] [ 37%] [busystreet07.wav    ]                        [-11094.5859375    -213.00546265 -26046.79101562  -5914.88232422
- -22298.93164062 -22056.76367188 -10047.37402344  -8783.60839844
- -19177.76171875 -12208.23242188]
-  ;  Testing              fold[4] [ 40%] [quietstreet10.wav   ]                        [-17218.86132812 -12636.03320312  -8177.40576172  -2384.05419922
-  -5342.93261719  -1855.02282715 -11784.4140625   -7196.5390625
-  -6944.71484375  -7134.47753906]
-  ,  Testing              fold[4] [ 43%] [openairmarket05.wav ]                        [ -9934.6953125   -5831.48730469 -14226.40917969  -1135.97753906
- -13964.05957031 -13233.47167969  -2586.67236328  -4412.45507812
- -13380.43945312  -9275.61914062]
-  `  Testing              fold[4] [ 47%] [office10.wav        ]                        [-36206.49609375 -26650.55078125   -666.30505371 -17933.40429688
-  -2942.21704102  -5298.25634766 -23213.5390625   -7699.81591797
- -19731.46289062 -11928.95996094]
-  *  Testing              fold[4] [ 50%] [bus05.wav           ]                        [  -309.62799072 -11313.296875   -24059.93554688  -8765.140625
- -17236.30664062 -17531.49414062 -17645.8203125  -12550.62011719
-  -7441.35693359 -11137.73144531]
-  ;  Testing              fold[4] [ 53%] [tubestation06.wav   ]                        [-14083.17675781 -10484.95996094  -6863.18115234 -10266.44726562
-  -6498.59033203  -6714.05273438  -5296.74609375  -3581.12597656
-  -8002.64306641  -2325.73095703]
-  ,  Testing              fold[4] [ 57%] [supermarket01.wav   ]                        [ -1723.28320312  -5530.25195312 -17286.5078125   -5571.9453125
- -13678.19921875 -11982.61035156  -8311.30664062  -5868.10253906
-  -5215.99511719  -4043.62133789]
-  `  Testing              fold[4] [ 60%] [quietstreet01.wav   ]                        [-25130.72265625 -22036.71679688  -5234.28417969 -12649.84863281
-  -4406.46386719   -480.98498535 -17141.4296875   -6682.24755859
- -13970.35546875  -9667.09277344]
-  *  Testing              fold[4] [ 63%] [bus02.wav           ]                        [  -809.47045898  -8274.41015625 -25928.31445312  -6840.68212891
- -20245.11914062 -21723.99414062 -14234.17480469  -6271.53955078
- -12901.94824219 -10434.99121094]
-  ;  Testing              fold[4] [ 67%] [supermarket04.wav   ]                        [-15844.10546875 -11833.79882812  -7167.14746094  -5711.22802734
-  -6728.93652344  -7259.4296875   -3162.97363281  -2755.27099609
- -11208.75976562  -7084.171875  ]
-  ,  Testing              fold[4] [ 70%] [restaurant01.wav    ]                        [ -9109.8984375   -6744.33935547 -12772.43554688  -3827.40966797
- -13415.23632812 -10156.421875     -985.53009033  -4354.37792969
-  -8415.59179688  -5393.95263672]
-  `  Testing              fold[4] [ 73%] [openairmarket08.wav ]                        [ -7056.70996094  -6806.34277344 -14631.5703125    -818.82800293
- -11996.71875     -7150.9375      -8190.25732422  -7881.80273438
-  -6626.28173828  -6732.17871094]
-  *  Testing              fold[4] [ 77%] [busystreet09.wav    ]                        [ -9630.67675781  -1054.23071289 -16943.30664062  -6033.01904297
- -10622.67480469  -4193.76367188  -7374.93798828 -12282.0390625
-  -5300.93115234  -4713.34082031]
-  ;  Testing              fold[4] [ 80%] [park06.wav          ]                        [-20398.3671875  -16043.46289062  -3464.75463867 -11941.01660156
-  -2105.19580078  -2405.41113281  -8350.02636719  -2765.06762695
- -10359.10449219  -6168.96630859]
-  ,  Testing              fold[4] [ 83%] [tubestation04.wav   ]                        [ -9825.42675781  -6936.64306641 -11251.92871094  -8469.44628906
-  -9287.14453125  -6109.796875    -8166.30810547 -10815.82617188
-  -3574.75976562  -1451.93395996]
-  `  Testing              fold[4] [ 87%] [office09.wav        ]                        [-39802.9140625  -34160.65625      -142.71414185 -22295.9453125
-  -5853.13378906  -8887.72851562 -26453.83007812  -9322.12597656
- -22631.3125     -12631.78808594]
-  *  Testing              fold[4] [ 90%] [quietstreet02.wav   ]                        [-14072.24414062 -11429.78125     -6805.63525391  -3529.93310547
-  -5635.66992188  -5056.98632812  -7131.78759766  -1963.53027344
-  -8134.72900391  -7065.953125  ]
-  ;  Testing              fold[4] [ 93%] [restaurant09.wav    ]                        [ -8917.37207031  -9843.23828125 -11895.03320312  -1717.44873047
- -12495.82617188  -7993.23339844  -4498.25146484  -7431.65722656
-  -6313.60546875  -5401.36132812]
-  ,  Testing              fold[4] [ 97%] [restaurant10.wav    ]                        [-11306.69921875  -9980.42285156 -10486.31542969  -1537.06542969
- -10232.46582031  -6675.29003906  -5082.29150391  -7989.15771484
-  -5575.55273438  -5270.55908203]
-  `  Testing              fold[5] [  0%] [park04.wav          ]                        [-19723.0234375  -15118.65722656  -2665.03027344 -10535.42089844
-  -2187.1027832   -2975.79418945  -7499.28808594  -2631.24462891
- -11188.203125    -6361.87792969]
-  *  Testing              fold[5] [  3%] [office09.wav        ]                        [-38513.015625   -33451.98046875   -151.69413757 -21518.42578125
-  -5786.91845703  -8224.31054688 -25520.84179688  -9002.62011719
- -21936.296875   -12183.79882812]
-  ;  Testing              fold[5] [  7%] [bus02.wav           ]                        [  -892.13208008  -8689.00488281 -25402.67773438  -6581.73681641
- -19901.51757812 -21669.97070312 -13662.71484375  -5671.47460938
- -13151.7890625  -10704.73828125]
-  ,  Testing              fold[5] [ 10%] [park07.wav          ]                        [-30784.328125   -22151.50390625  -8050.73730469 -14099.82226562
-  -5539.21875      -169.01121521 -20940.93164062  -9925.47265625
- -16187.19433594 -12217.51855469]
-  `  Testing              fold[5] [ 13%] [tube06.wav          ]                        [ -7702.88476562 -11964.84082031  -8374.3984375   -9623.63769531
-  -5876.51953125 -10410.94726562  -4522.46484375  -2477.16967773
-  -6063.41357422  -3267.07348633]
-  *  Testing              fold[5] [ 17%] [park05.wav          ]                        [-28085.82617188 -22011.171875    -6410.98681641 -13431.69238281
-  -3689.89819336   -378.68325806 -19841.99023438  -8874.94042969
- -14342.11328125 -11160.64257812]
-  ;  Testing              fold[5] [ 20%] [supermarket04.wav   ]                        [-16075.15234375 -12238.63378906  -6860.46337891  -5785.33984375
-  -6449.72021484  -7134.48730469  -3155.02148438  -2661.40893555
- -11095.16113281  -7054.17871094]
-  ,  Testing              fold[5] [ 23%] [tube09.wav          ]                        [ -4155.7734375  -10804.26757812 -15574.26171875  -6239.24755859
- -12984.59570312 -10059.93164062 -10632.25195312 -11212.88867188
-  -3543.70288086  -4348.66894531]
-  `  Testing              fold[5] [ 27%] [restaurant09.wav    ]                        [ -9380.5546875  -10449.68457031 -11598.79296875  -1554.94934082
- -12387.30371094  -8085.51953125  -4382.37548828  -7239.20654297
-  -6482.20263672  -5654.94775391]
-  *  Testing              fold[5] [ 30%] [openairmarket10.wav ]                        [-10771.1171875   -9771.796875   -13485.37695312   -584.17266846
- -10611.35253906  -7371.84814453  -9382.78515625  -8001.51318359
-  -6512.02929688  -7420.02783203]
-  ;  Testing              fold[5] [ 33%] [quietstreet10.wav   ]                        [-17180.65429688 -12819.40820312  -8212.00683594  -2170.01416016
-  -5443.99609375  -1979.87902832 -11771.4765625   -7206.05322266
-  -6877.83984375  -7158.56835938]
-  ,  Testing              fold[5] [ 37%] [supermarket01.wav   ]                        [ -1915.10217285  -5633.34033203 -16645.28710938  -5195.95214844
- -13610.73632812 -11828.39355469  -7616.21679688  -5329.76123047
-  -5308.01464844  -3889.8359375 ]
-  `  Testing              fold[5] [ 40%] [tubestation07.wav   ]                        [-14603.99414062 -12260.14550781  -5653.53710938  -8556.94140625
-  -5351.50292969  -5612.15527344  -3582.69555664  -1998.60644531
-  -9097.31933594  -4489.67138672]
-  *  Testing              fold[5] [ 43%] [busystreet05.wav    ]                        [-15894.66796875  -5273.3828125  -10871.41210938  -5983.47460938
- -10501.21191406 -10047.06738281  -3755.60473633  -3486.37792969
- -14241.1875      -6332.85302734]
-  ;  Testing              fold[5] [ 47%] [tubestation05.wav   ]                        [-13384.4296875  -11341.01464844 -11725.96484375  -2692.76489258
- -12002.98339844  -9614.92578125  -2647.37719727  -3267.9855957
-  -8026.96630859  -6851.93847656]
-  ,  Testing              fold[5] [ 50%] [restaurant07.wav    ]                        [ -9650.33789062  -9091.13769531 -10211.55859375  -2895.96069336
- -10755.4765625  -11135.86328125  -1378.73461914  -4977.95898438
-  -9680.03125     -6783.75195312]
-  `  Testing              fold[5] [ 53%] [openairmarket07.wav ]                        [-13868.34960938 -11518.99609375  -8774.11035156  -1421.17175293
- -10441.77246094  -6597.92138672  -3481.28491211  -8692.43261719
-  -7464.39257812  -6356.87060547]
-  *  Testing              fold[5] [ 57%] [supermarket10.wav   ]                        [-12819.37792969  -8334.07519531  -9685.18847656   -872.57305908
-  -9442.20605469  -4816.09814453  -5529.1796875   -5650.28564453
-  -6671.61816406  -5274.77294922]
-  ;  Testing              fold[5] [ 60%] [tubestation01.wav   ]                        [ -6607.8046875   -9049.63867188 -12432.34570312  -5693.7578125
- -13199.11230469  -9187.32324219  -4097.49169922  -6571.75488281
-  -4214.02148438  -2432.39404297]
-  ,  Testing              fold[5] [ 63%] [office03.wav        ]                        [-26157.6484375  -21120.94726562  -2379.11035156 -13065.05566406
-  -4103.41308594  -2319.31542969 -13916.24316406  -4802.08349609
- -13027.71972656  -8335.90332031]
-  `  Testing              fold[5] [ 67%] [quietstreet07.wav   ]                        [-26806.16210938 -22080.78710938  -6789.23095703 -11847.13183594
-  -4651.99414062   -494.91452026 -18870.08984375  -9167.27832031
- -12350.23046875  -9673.24121094]
-  *  Testing              fold[5] [ 70%] [tube03.wav          ]                        [ -2583.44970703 -12047.89941406 -17766.00390625  -9001.62597656
- -14747.22460938 -11741.12011719 -14669.95800781 -14388.62597656
-  -1378.72961426  -3251.6328125 ]
-  ;  Testing              fold[5] [ 73%] [bus06.wav           ]                        [ -1432.9822998  -12228.43554688 -18890.8046875   -3402.24560547
- -15849.57128906 -13160.74902344 -11846.64550781  -5796.32080078
-  -9238.93847656 -10633.78808594]
-  ,  Testing              fold[5] [ 77%] [busystreet03.wav    ]                        [-11789.41113281  -1200.80407715 -19260.05664062  -4746.74951172
- -16800.92382812 -16973.43554688  -5716.76025391  -5975.21875
- -16088.92089844  -8980.50976562]
-  `  Testing              fold[5] [ 80%] [busystreet09.wav    ]                        [ -9808.14355469  -1195.12670898 -16097.04101562  -5636.16943359
- -10499.015625    -3877.87109375  -6788.77197266 -11782.7109375
-  -5515.36669922  -4567.85302734]
-  *  Testing              fold[5] [ 83%] [quietstreet02.wav   ]                        [-14050.60742188 -11706.07910156  -6736.90429688  -3495.37573242
-  -5737.66357422  -5164.60058594  -7041.80419922  -1904.54174805
-  -8095.45947266  -7024.90625   ]
-  ;  Testing              fold[5] [ 87%] [bus08.wav           ]                        [   -92.01322174 -16548.33984375 -28945.26953125 -11056.52050781
- -21352.81835938 -26663.80078125 -17136.97851562  -8399.54199219
- -15188.91015625 -16392.31445312]
-  ,  Testing              fold[5] [ 90%] [office08.wav        ]                        [-20606.42578125 -19673.78125     -1274.71276855 -12878.32226562
-  -3566.71704102  -3617.01098633 -11461.43945312  -4839.87646484
- -11284.98632812  -6188.93847656]
-  `  Testing              fold[5] [ 93%] [openairmarket04.wav ]                        [-11115.20605469 -10434.73535156  -8502.64453125  -1863.77929688
-  -8740.74707031  -7283.24853516  -3392.97070312  -3324.89501953
-  -7537.50927734  -6734.63134766]
-  *  Testing              fold[5] [ 97%] [restaurant10.wav    ]                        [-11687.68066406 -10485.3359375  -10376.12109375  -1391.67504883
- -10203.67773438  -6778.62597656  -5157.99560547  -7908.91162109
-  -5716.24169922  -5504.61181641]
-  [Done]                                                                             
- 
-System evaluation
-================================
-10
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  2.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  1.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  1.  3.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  2.  0.  0.  1.]
- [ 0.  1.  0.  0.  0.  0.  0.  3.  0.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  3.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
-[ 1.          1.          1.          0.75        1.          0.75
-  0.66666667  0.6         1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  2.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  1.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  1.  3.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  2.  0.  0.  1.]
- [ 0.  1.  0.  0.  0.  0.  0.  3.  0.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  3.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
-[ 1.          1.          1.          0.75        1.          0.75
-  0.66666667  0.6         1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  0.  1.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  3.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  3.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  3.]]
-[ 1.          1.          1.          0.75        1.          0.6         1.
-  0.66666667  1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  0.  1.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  3.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  3.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  3.]]
-[ 1.          1.          1.          0.75        1.          0.6         1.
-  0.66666667  1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  2.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  0.  1.  0.  1.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  1.  0.  1.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  2.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  1.  1.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  2.]]
-[ 1.          1.          0.66666667  0.6         1.          0.5         1.
-  0.4         1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  2.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  0.  1.  0.  1.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  1.  0.  1.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  2.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  1.  1.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  2.]]
-[ 1.          1.          0.66666667  0.6         1.          0.5         1.
-  0.4         1.          1.        ]
-[[ 3.  0.  0.  0.  0.  0.  0.  1.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  2.  0.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  1.  0.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  3.]]
-[ 0.75  1.    1.    0.6   1.    0.5   1.    0.5   1.    1.  ]
-[[ 3.  0.  0.  0.  0.  0.  0.  1.  0.  0.]
- [ 0.  3.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  3.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  2.  0.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  2.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  1.  0.  2.  1.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  3.]]
-[ 0.75  1.    1.    0.6   1.    0.5   1.    0.5   1.    1.  ]
-[[ 3.  0.  0.  0.  0.  0.  0.  1.  0.  0.]
- [ 0.  2.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  2.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  2.  1.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  1.  0.  2.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  1.]
- [ 0.  1.  0.  0.  0.  1.  0.  1.  1.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
-[ 0.75  1.    1.    0.5   1.    0.4   0.5   0.2   1.    1.  ]
-[[ 3.  0.  0.  0.  0.  0.  0.  1.  0.  0.]
- [ 0.  2.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  2.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  3.  0.  0.  2.  1.  0.  0.]
- [ 0.  0.  0.  0.  1.  0.  0.  0.  0.  0.]
- [ 0.  0.  1.  0.  2.  2.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  1.]
- [ 0.  1.  0.  0.  0.  1.  0.  1.  1.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  2.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
-[ 0.75  1.    1.    0.5   1.    0.4   0.5   0.2   1.    1.  ]
-[[ 15.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
- [  0.  13.   0.   0.   0.   0.   0.   2.   0.   0.]
- [  0.   0.  13.   0.   0.   2.   0.   0.   0.   0.]
- [  0.   0.   0.  15.   0.   0.   0.   0.   0.   0.]
- [  0.   0.   1.   0.   6.   8.   0.   0.   0.   0.]
- [  0.   0.   0.   0.   0.  12.   0.   3.   0.   0.]
- [  0.   0.   0.   5.   0.   0.   9.   1.   0.   0.]
- [  2.   0.   0.   3.   0.   0.   0.  10.   0.   0.]
- [  0.   0.   0.   0.   0.   0.   0.   4.  11.   0.]
- [  0.   0.   0.   1.   0.   0.   2.   2.   0.  10.]]
-  File-wise evaluation, over 5 folds
-     Scene label          | Nref : Nsys | Accuracy |  | Fold1    | Fold2    | Fold3    | Fold4    | Fold5    |
-     =====================+======+======+==========+  +==========+==========+==========+==========+==========+
-     bus                  |   15 :   17 |  90.0 %  |  | 100.0 %  | 100.0 %  | 100.0 %  |  75.0 %  |  75.0 %  |
-     busystreet           |   15 :   13 | 100.0 %  |  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  |
-     office               |   15 :   14 |  93.3 %  |  | 100.0 %  | 100.0 %  |  66.7 %  | 100.0 %  | 100.0 %  |
-     openairmarket        |   15 :   24 |  64.0 %  |  |  75.0 %  |  75.0 %  |  60.0 %  |  60.0 %  |  50.0 %  |
-     park                 |   15 :    6 | 100.0 %  |  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  |
-     quietstreet          |   15 :   22 |  55.0 %  |  |  75.0 %  |  60.0 %  |  50.0 %  |  50.0 %  |  40.0 %  |
-     restaurant           |   15 :   11 |  83.3 %  |  |  66.7 %  | 100.0 %  | 100.0 %  | 100.0 %  |  50.0 %  |
-     supermarket          |   15 :   22 |  47.3 %  |  |  60.0 %  |  66.7 %  |  40.0 %  |  50.0 %  |  20.0 %  |
-     tube                 |   15 :   11 | 100.0 %  |  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  |
-     tubestation          |   15 :   10 | 100.0 %  |  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  | 100.0 %  |
-     =====================+======+======+==========+  +==========+==========+==========+==========+==========+
-     Overall accuracy     |  150 :  150 |  83.3 %  |  |  87.7 %  |  90.2 %  |  81.7 %  |  83.5 %  |  73.5 %  |
-  [Done]                                                                             
- 
-Total Time : 2624.34695888
- 
