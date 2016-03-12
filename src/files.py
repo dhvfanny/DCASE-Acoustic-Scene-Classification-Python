@@ -171,9 +171,9 @@ def save_data(filename, data):
     nothing
 
     """
-
+    #print data
     pickle.dump(data, open(filename, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
-
+   # pickle.dump(data,open(filename, 'wb'))
 
 def load_data(filename):
     """Load data from pickle file

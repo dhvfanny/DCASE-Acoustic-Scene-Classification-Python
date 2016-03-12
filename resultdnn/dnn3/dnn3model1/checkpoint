@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/rohit21122012/ASem7/DCASE2016-baseline-system-python/dnn3/dnn3model1/model-1000"
+all_model_checkpoint_paths: "/home/rohit21122012/ASem7/DCASE2016-baseline-system-python/dnn3/dnn3model1/model-1000"

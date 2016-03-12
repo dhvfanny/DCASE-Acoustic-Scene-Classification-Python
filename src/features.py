@@ -4,7 +4,68 @@
 import numpy
 import librosa
 import scipy
+from scikits.talkbox import lpc
+from scikits.talkbox.tools import segment_axis
+from scipy.fftpack import fft,dct
 
+def feature_extraction_lp_group_delay(y, fs=44100, statistics=True, lpgd_params=None, win_params=None):
+
+    eps = numpy.spacing(1)
+
+    nfft = lpgd_params['nfft']
+    lp_order = lpgd_params['lp_order']
+    
+    y = y + eps
+  
+    frames = segment_axis(y, win_params['win_length'], win_params['hop_length']);
+   
+    print 'frames : ' + str(frames.shape)
+   
+    a,e,k = lpc(frames, lp_order)
+    print 'a : ' + str(a.shape)
+   
+    A = fft(a, nfft)
+	
+
+    A = 1/A
+    
+
+    
+    phaseA = numpy.unwrap(numpy.angle(A))
+    
+    print 'phaseA: ' + str(phaseA.shape) 
+
+    phaseA = phaseA[:,0:nfft/2]
+    
+    
+    print 'phaseA: ' + str(phaseA.shape)
+ 
+    tauA = -1 * numpy.diff(phaseA)
+    
+    print 'tauA' + str(tauA.shape)
+    # tau = numpy.concatenate((tauA, tauA[-1]))
+    # tau = tau
+    
+    feature_matrix = tauA
+    feature_matrix = dct(feature_matrix, n=20)
+    print 'fm: ' + str(feature_matrix.shape)
+    
+
+    # Collect into data structure
+    if statistics:
+        return {
+            'feat': feature_matrix,
+            'stat': {
+                'mean': numpy.mean(feature_matrix, axis=0),
+                'std': numpy.std(feature_matrix, axis=0),
+                'N': feature_matrix.shape[0],
+                'S1': numpy.sum(feature_matrix, axis=0),
+                'S2': numpy.sum(feature_matrix ** 2, axis=0),
+            }
+        }
+    else:
+        return {
+            'feat': feature_matrix}
 
 def feature_extraction(y, fs=44100, statistics=True, include_mfcc0=True, include_delta=True,
                        include_acceleration=True, mfcc_params=None, delta_params=None, acceleration_params=None):
@@ -77,7 +138,8 @@ def feature_extraction(y, fs=44100, statistics=True, include_mfcc0=True, include
         window = scipy.signal.hann(mfcc_params['n_fft'], sym=True)
     else:
         window = None
-
+    print 'y: ' + str(y.shape)
+    print 'winlength: '+ str(mfcc_params['win_length']) 
     # Calculate Static Coefficients
     magnitude_spectrogram = numpy.abs(librosa.stft(y + eps,
                                                    n_fft=mfcc_params['n_fft'],
@@ -85,6 +147,8 @@ def feature_extraction(y, fs=44100, statistics=True, include_mfcc0=True, include
                                                    hop_length=mfcc_params['hop_length'],
                                                    center=True,
                                                    window=window))**2
+    
+    print 'mag_spec: ' + str(magnitude_spectrogram.shape)
     mel_basis = librosa.filters.mel(sr=fs,
                                     n_fft=mfcc_params['n_fft'],
                                     n_mels=mfcc_params['n_mels'],
@@ -93,7 +157,8 @@ def feature_extraction(y, fs=44100, statistics=True, include_mfcc0=True, include
                                     htk=mfcc_params['htk'])
     mel_spectrum = numpy.dot(mel_basis, magnitude_spectrogram)
     mfcc = librosa.feature.mfcc(S=librosa.logamplitude(mel_spectrum))
-    
+
+    print 'mfcc dimensions: ' + str(mfcc.shape)
     # Collect the feature matrix
     feature_matrix = mfcc
     if include_delta:

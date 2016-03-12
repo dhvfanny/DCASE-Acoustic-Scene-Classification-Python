@@ -77,8 +77,11 @@ class DCASE2016_SceneClassification_Metrics():
         """
 
         confusion_matrix = metrics.confusion_matrix(y_true=y_true, y_pred=y_pred, labels=labels).astype(float)
-        return numpy.divide(numpy.diag(confusion_matrix), numpy.sum(confusion_matrix, 1)+self.eps)
-
+        #print confusion_matrix
+        temp =  numpy.divide(numpy.diag(confusion_matrix), numpy.sum(confusion_matrix, 1)+self.eps)
+        #print temp
+        return temp
+ 
     def evaluate(self, annotated_ground_truth, system_output):
         """Evaluate system output and annotated ground truth pair.
 
@@ -98,7 +101,7 @@ class DCASE2016_SceneClassification_Metrics():
 
         """
 
-        accuracies_per_class = self.accuracies(y_true=system_output, y_pred=annotated_ground_truth, labels=self.class_list)
+        accuracies_per_class = self.accuracies(y_pred=system_output, y_true=annotated_ground_truth, labels=self.class_list)
 
         if self.accuracies_per_class is None:
             self.accuracies_per_class = accuracies_per_class
