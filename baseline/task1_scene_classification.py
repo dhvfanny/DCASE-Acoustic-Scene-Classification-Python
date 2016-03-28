@@ -15,14 +15,22 @@ import numpy
 import csv
 import argparse
 import textwrap
+import timeit
+from sklearn.metrics import confusion_matrix
+
+from sklearn.externals import joblib
 
 from sklearn import mixture
 
 __version_info__ = ('1', '0', '0')
 __version__ = '.'.join(__version_info__)
 
+final_result = {}
 
 def main(argv):
+
+    tot_start = timeit.default_timer()
+
     numpy.random.seed(123456)  # let's make randomization predictable
 
     parser = argparse.ArgumentParser(
@@ -76,6 +84,7 @@ def main(argv):
 
     # Get dataset container class
     dataset = eval(params['general']['development_dataset'])(data_path=params['path']['data'])
+    plot_name = params['classifier']['method']
 
     # Fetch data over internet and setup the data
     # ==================================================
@@ -119,12 +128,17 @@ def main(argv):
                                  overwrite=params['general']['overwrite'])
 
         foot()
-
+   
+    train_start = 0.0
+    train_end = 0.0
+    test_start = 0.0
+    test_end = 0.0
     # System training
     # ==================================================
     if params['flow']['train_system']:
         section_header('System training')
-
+	
+	train_start = timeit.default_timer()	
         do_system_training(dataset=dataset,                           
                            model_path=params['path']['models'],
                            feature_normalizer_path=params['path']['feature_normalizers'],
@@ -134,16 +148,17 @@ def main(argv):
                            dataset_evaluation_mode=dataset_evaluation_mode,
                            overwrite=params['general']['overwrite']
                            )
+	train_end = timeit.default_timer()
 
         foot()
 
     # System evaluation in development mode
     if args.development and not args.challenge:
-
         # System testing
         # ==================================================
         if params['flow']['test_system']:
             section_header('System testing')
+	    test_start = timeit.default_timer()
 
             do_system_testing(dataset=dataset,                              
                               feature_path=params['path']['features'],
@@ -155,6 +170,8 @@ def main(argv):
                               overwrite=params['general']['overwrite']
                               )
             
+ 	    test_end = timeit.default_timer()
+
             foot()
 
         # System evaluation
@@ -195,6 +212,24 @@ def main(argv):
             print " "
             print "Your results for the challenge data are stored at ["+params['path']['challenge_results']+"]"
             print " "
+
+    tot_end = timeit.default_timer()
+    print " "
+    print "Train Time : " + str(train_end-train_start)
+    print " "
+    print " "
+    print "Test Time : " + str(test_end-test_start)
+    print " "
+    print " "
+    print "Total Time : " + str(tot_end-tot_start)
+    print " "
+    final_result['train_time'] = train_end-train_start
+    final_result['test_time'] = test_end-test_start
+
+    final_result['tot_time'] = tot_end-tot_start
+    joblib.dump(final_result, 'result' + plot_name + '.pkl')
+
+
     return 0
 
 
@@ -859,6 +894,7 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
     """
 
     dcase2016_scene_metric = DCASE2016_SceneClassification_Metrics(class_list=dataset.scene_labels)
+    tot_cm = numpy.zeros((dataset.scene_label_count, dataset.scene_label_count))
     results_fold = []
     for fold in dataset.folds(mode=dataset_evaluation_mode):
         dcase2016_scene_metric_fold = DCASE2016_SceneClassification_Metrics(class_list=dataset.scene_labels)
@@ -880,6 +916,14 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
         dcase2016_scene_metric.evaluate(system_output=y_pred, annotated_ground_truth=y_true)
         dcase2016_scene_metric_fold.evaluate(system_output=y_pred, annotated_ground_truth=y_true)
         results_fold.append(dcase2016_scene_metric_fold.results())
+    	tot_cm += confusion_matrix(y_true, y_pred)
+
+    print tot_cm
+    #plot_cm(tot_cm, dataset.scene_labels,name=plot_name)
+    #joblib.dump(tot_cm, plot_name + '.pkl')
+    final_result['tot_cm'] = tot_cm
+    final_result['tot_cm_acc'] = numpy.sum(numpy.diag(tot_cm))/numpy.sum(tot_cm)
+
     results = dcase2016_scene_metric.results()
 
     print "  File-wise evaluation, over %d folds" % dataset.fold_count
@@ -910,6 +954,8 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
                                                                  results['Nref'],
                                                                  results['Nsys'],
                                                                  results['overall_accuracy'] * 100)+fold_values
+
+    final_result['result'] = results
 
 if __name__ == "__main__":
     try:

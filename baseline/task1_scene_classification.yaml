@@ -2,9 +2,9 @@
 # Flow
 # ==========================================================
 flow:
-  initialize: true
-  extract_features: true
-  feature_normalizer: true
+  initialize: false
+  extract_features: false
+  feature_normalizer: false
   train_system: true
   test_system: true
   evaluate_system: true
@@ -16,7 +16,7 @@ general:
   development_dataset: DCASE2013_Scene_DevelopmentSet
   challenge_dataset: DCASE2013_Scene_EvaluationSet
 
-  overwrite: false              # Overwrite previously stored data
+  overwrite: true              # Overwrite previously stored data
 
 # ==========================================================
 # Paths
@@ -68,7 +68,7 @@ classifier:
 
 classifier_parameters:
   gmm:
-    n_components: 4            # Number of Gaussian components
+    n_components: 16            # Number of Gaussian components
     covariance_type: diag       # [diag|full] Diagonal or full covariance matrix
     random_state: 0
     thresh: !!null
