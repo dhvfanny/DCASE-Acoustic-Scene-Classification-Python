@@ -923,7 +923,7 @@ def do_classification_xgboost(feature_data, model_container):
     #for label_id, label in enumerate(model_container['models']):
     #    logls[label_id] = numpy.sum(model_container['models'][label].score(feature_data))
     #logls = numpy.sum(model_container['models'].predict_log_proba(feature_data),0)
-    logls = numpy.sum(numpy.log(model_container['models'].predict_proba(feature_data)),0)
+    logls = numpy.sum(numpy.log(model_container['models'].predict(feature_data)),0)
 
     classification_result_id = numpy.argmax(logls)
     return classification_result_id
