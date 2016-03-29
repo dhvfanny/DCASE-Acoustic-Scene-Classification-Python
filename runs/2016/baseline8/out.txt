@@ -1,0 +1,1857 @@
+--------------------------------
+DCASE 2016::Acoustic Scene Classification / Baseline System
+--------------------------------
+Running system in development mode
+ 
+Feature extraction
+================================
+  `  Extracting           [  0%] [a001_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  0%] [a001_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  0%] [a001_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  0%] [a001_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  0%] [a001_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  0%] [a001_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  1%] [a003_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  1%] [a003_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  1%] [a003_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  1%] [a003_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  1%] [a003_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  1%] [a003_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  1%] [a003_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  1%] [a003_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  1%] [a005_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  1%] [a005_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  1%] [a005_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  1%] [a005_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  2%] [a005_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  2%] [a005_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  2%] [a006_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  2%] [a006_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  2%] [a006_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  2%] [a006_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  2%] [a006_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  2%] [a009_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  2%] [a009_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  2%] [a009_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  2%] [a009_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  2%] [a009_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  3%] [a009_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  3%] [a009_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  3%] [a010_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  3%] [a010_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  3%] [a010_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  3%] [a010_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  3%] [a010_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  3%] [a010_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  3%] [a012_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  3%] [a012_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  3%] [a012_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  4%] [a012_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  4%] [a012_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  4%] [a012_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  4%] [a012_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  4%] [a014_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  4%] [a014_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  4%] [a014_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  4%] [a014_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  4%] [a014_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  4%] [a014_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  4%] [a014_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  4%] [a016_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  5%] [a016_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  5%] [a016_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  5%] [a016_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  5%] [a016_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  5%] [a016_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  5%] [a016_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  5%] [a017_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  5%] [a017_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  5%] [a017_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  5%] [a017_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  5%] [a017_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  5%] [a017_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  6%] [a017_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  6%] [a018_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  6%] [a018_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  6%] [a018_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  6%] [a018_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  6%] [a018_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  6%] [a018_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  6%] [a018_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  6%] [a019_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  6%] [a019_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  6%] [a019_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  6%] [a019_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  7%] [a019_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  7%] [a019_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  7%] [a019_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  7%] [a020_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  7%] [a020_162_192.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  7%] [a020_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  7%] [a020_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  7%] [a020_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  7%] [a021_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  7%] [a021_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  7%] [a021_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  8%] [a021_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  8%] [a021_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  8%] [a021_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  8%] [a021_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  8%] [a022_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  8%] [a022_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  8%] [a022_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  8%] [a022_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  8%] [a022_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  8%] [a022_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  8%] [a022_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  8%] [a023_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  9%] [a023_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  9%] [a023_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  9%] [a023_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  9%] [a023_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  9%] [a023_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  9%] [a023_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  9%] [a026_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  9%] [a026_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [  9%] [a026_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [  9%] [a026_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [  9%] [a026_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [  9%] [a026_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 10%] [a026_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 10%] [a027_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 10%] [a027_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 10%] [a027_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 10%] [a027_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 10%] [a027_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 10%] [a027_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 10%] [a030_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 10%] [a030_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 10%] [a030_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 10%] [a030_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 11%] [a030_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 11%] [a030_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 11%] [a031_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 11%] [a031_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 11%] [a031_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 11%] [a031_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 11%] [a031_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 11%] [a031_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 11%] [a034_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 11%] [a034_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 11%] [a034_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 11%] [a034_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 12%] [a034_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 12%] [a034_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 12%] [a036_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 12%] [a036_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 12%] [a036_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 12%] [a036_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 12%] [a036_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 12%] [a036_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 12%] [a038_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 12%] [a038_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 12%] [a038_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 12%] [a038_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 13%] [a038_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 13%] [a038_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 13%] [a039_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 13%] [a039_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 13%] [a039_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 13%] [a039_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 13%] [a039_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 13%] [a040_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 13%] [a040_141_171.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 13%] [a040_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 13%] [a040_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 14%] [a040_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 14%] [a043_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 14%] [a043_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 14%] [a043_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 14%] [a043_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 14%] [a043_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 14%] [a043_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 14%] [a045_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 14%] [a045_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 14%] [a045_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 14%] [a045_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 14%] [a045_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 15%] [a045_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 15%] [a050_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 15%] [a050_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 15%] [a050_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 15%] [a050_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 15%] [a050_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 15%] [a050_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 15%] [a051_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 15%] [a051_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 15%] [a051_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 15%] [a051_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 15%] [a051_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 16%] [a051_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 16%] [a052_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 16%] [a052_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 16%] [a052_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 16%] [a052_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 16%] [a052_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 16%] [a052_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 16%] [a053_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 16%] [a053_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 16%] [a053_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 16%] [a053_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 16%] [a053_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 17%] [a054_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 17%] [a054_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 17%] [a054_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 17%] [a054_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 17%] [a054_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 17%] [a057_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 17%] [a057_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 17%] [a057_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 17%] [a057_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 17%] [a057_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 17%] [a057_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 18%] [a058_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 18%] [a058_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 18%] [a058_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 18%] [a058_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 18%] [a058_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 18%] [a058_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 18%] [a059_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 18%] [a059_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 18%] [a059_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 18%] [a059_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 18%] [a059_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 18%] [a059_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 19%] [a060_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 19%] [a060_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 19%] [a060_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 19%] [a060_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 19%] [a060_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 19%] [a062_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 19%] [a062_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 19%] [a062_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 19%] [a062_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 19%] [a062_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 19%] [a062_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 19%] [a066_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 20%] [a066_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 20%] [a066_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 20%] [a066_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 20%] [a068_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 20%] [a068_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 20%] [a068_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 20%] [a068_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 20%] [a068_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 20%] [a068_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 20%] [a069_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 20%] [a069_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 21%] [a069_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 21%] [a069_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 21%] [a069_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 21%] [a071_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 21%] [a071_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 21%] [a071_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 21%] [a071_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 21%] [a071_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 21%] [a071_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 21%] [a074_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 21%] [a074_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 21%] [a074_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 22%] [a074_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 22%] [a074_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 22%] [a074_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 22%] [a074_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 22%] [a074_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 22%] [a074_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 22%] [a075_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 22%] [a075_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 22%] [a075_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 22%] [a075_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 22%] [a075_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 22%] [a075_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 23%] [a075_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 23%] [a075_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 23%] [a076_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 23%] [a076_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 23%] [a076_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 23%] [a076_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 23%] [a076_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 23%] [a076_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 23%] [a076_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 23%] [a076_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 23%] [a079_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 24%] [a079_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 24%] [a079_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 24%] [a079_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 24%] [a079_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 24%] [a079_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 24%] [a079_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 24%] [a082_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 24%] [a082_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 24%] [a082_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 24%] [a082_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 24%] [a082_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 24%] [a083_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 25%] [a083_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 25%] [a083_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 25%] [a083_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 25%] [a083_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 25%] [a083_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 25%] [a084_122_152.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 25%] [a084_152_182.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 25%] [a084_182_212.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 25%] [a084_212_242.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 25%] [a084_242_272.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 25%] [a084_62_92.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 25%] [a084_92_122.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 26%] [a089_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 26%] [a089_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 26%] [a089_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 26%] [a089_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 26%] [a089_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 26%] [a089_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 26%] [a089_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 26%] [a089_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 26%] [a092_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 26%] [a092_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 26%] [a092_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 26%] [a092_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 27%] [a092_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 27%] [a092_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 27%] [a092_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 27%] [a094_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 27%] [a094_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 27%] [a094_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 27%] [a094_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 27%] [a094_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 27%] [a095_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 27%] [a095_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 27%] [a095_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 28%] [a095_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 28%] [a095_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 28%] [a096_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 28%] [a096_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 28%] [a096_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 28%] [a096_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 28%] [a096_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 28%] [a096_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 28%] [a096_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 28%] [a096_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 28%] [a096_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 28%] [a096_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 29%] [a097_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 29%] [a097_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 29%] [a097_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 29%] [a097_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 29%] [a097_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 29%] [a097_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 29%] [a097_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 29%] [a097_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 29%] [a097_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 29%] [a098_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 29%] [a098_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 29%] [a098_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 30%] [a098_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 30%] [a098_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 30%] [a098_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 30%] [a098_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 30%] [a098_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 30%] [a098_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 30%] [a098_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 30%] [a099_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 30%] [a099_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 30%] [a099_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 30%] [a099_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 31%] [a099_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 31%] [a099_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 31%] [a099_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 31%] [a101_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 31%] [a101_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 31%] [a101_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 31%] [a101_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 31%] [a101_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 31%] [a104_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 31%] [a104_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 31%] [a104_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 31%] [a104_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 32%] [a104_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 32%] [a104_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 32%] [a105_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 32%] [a105_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 32%] [a105_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 32%] [a105_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 32%] [a105_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 32%] [a105_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 32%] [a105_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 32%] [a105_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 32%] [a106_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 32%] [a106_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 33%] [a106_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 33%] [a106_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 33%] [a106_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 33%] [a106_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 33%] [a106_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 33%] [a106_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 33%] [a107_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 33%] [a107_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 33%] [a107_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 33%] [a107_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 33%] [a107_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 34%] [a107_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 34%] [a107_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 34%] [a107_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 34%] [a107_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 34%] [a109_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 34%] [a109_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 34%] [a109_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 34%] [a109_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 34%] [a109_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 34%] [a109_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 34%] [a109_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 34%] [a110_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 35%] [a110_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 35%] [a110_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 35%] [a110_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 35%] [a110_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 35%] [a110_270_300.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 35%] [a110_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 35%] [a110_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 35%] [a110_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 35%] [a112_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 35%] [a112_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 35%] [a112_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 35%] [a112_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 36%] [a112_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 36%] [a113_155_185.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 36%] [a113_185_215.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 36%] [a113_215_245.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 36%] [a113_245_275.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 36%] [a113_30_60.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 36%] [a113_60_90.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 36%] [a113_90_120.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 36%] [a116_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 36%] [a116_108_138.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 36%] [a116_138_168.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 36%] [a116_48_78.wav      ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 37%] [a116_78_108.wav     ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 37%] [a120_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 37%] [a120_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 37%] [a120_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 37%] [a120_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 37%] [a120_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 37%] [a121_0_30.wav       ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 37%] [a121_120_150.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 37%] [a121_150_180.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  *  Extracting           [ 37%] [a121_180_210.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ;  Extracting           [ 37%] [a121_210_240.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  ,  Extracting           [ 38%] [a121_240_270.wav    ]                          y: (1323001,)
+winlength: 1764
+mag_spec: (1025, 1501)
+mfcc dimensions: (20, 1501)
+  `  Extracting           [ 38%] [a121_270_300.wav    ]                          --------------------------------
+DCASE 2016::Acoustic Scene Classification / Baseline System
+--------------------------------
+Running system in development mode
+ 
+Download dataset
+================================
+  [Done]                                                                             
+ 
+Extract dataset
+================================
+  [Done]                                                                                        
+ 
+Feature extraction
+================================
+  [Done]                                                                             
+ 
+Feature normalizer
+================================
+  [Done]                                                                             
+ 
+System training
+================================
+  [Done]                                                                               
+ 
+System testing
+================================
+  [Done]                                                                               
+ 
+System evaluation
+================================
+[[ 50.   0.   0.   1.   6.   0.   0.   0.   2.   0.   0.   0.  14.   1.
+    4.]
+ [  0.  39.   0.   2.   0.   0.   0.   0.   0.   0.   0.   0.   0.  17.
+   20.]
+ [  0.   0.  69.   0.   0.   0.   0.   0.   0.   6.   0.   0.   1.   0.
+    2.]
+ [  0.   1.   0.  46.   0.   0.   0.   1.   0.   0.   0.   0.   0.   0.
+   30.]
+ [  0.   0.   1.   0.  66.   0.   0.   0.   0.   0.   0.   0.  11.   0.
+    0.]
+ [  2.   0.   1.   0.   0.  54.   0.   1.   0.   0.   6.   1.  13.   0.
+    0.]
+ [  1.   0.  11.   0.   0.   0.  54.   0.   5.   7.   0.   0.   0.   0.
+    0.]
+ [  0.   0.   1.   0.   0.   0.   1.  64.  10.   0.   2.   0.   0.   0.
+    0.]
+ [  0.   0.   0.   0.   0.   0.   5.  21.  38.   6.   1.   0.   2.   0.
+    5.]
+ [  0.   0.   0.   0.   0.   0.   1.   1.   0.  75.   0.   0.   0.   0.
+    1.]
+ [  0.   0.   0.   0.   0.   0.   0.   1.   0.   0.  77.   0.   0.   0.
+    0.]
+ [  3.   0.   4.   0.   1.   7.   0.   2.  10.   0.   1.  25.  24.   0.
+    1.]
+ [  0.   1.   1.   0.   3.   5.   0.   0.   1.   1.   0.   4.  60.   0.
+    2.]
+ [  1.   6.   7.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.  34.
+   30.]
+ [  0.   1.   0.   1.   2.   0.   5.   0.   0.   0.   0.   0.   0.   1.
+   68.]]
+  File-wise evaluation, over 4 folds
+     Scene label          | Nref : Nsys | Accuracy |  | Fold1    | Fold2    | Fold3    | Fold4    |
+     =====================+======+======+==========+  +==========+==========+==========+==========+
+     beach                |   78 :   57 |  64.0 %  |  |  68.4 %  |  66.7 %  |  78.9 %  |  42.1 %  |
+     bus                  |   78 :   48 |  50.5 %  |  |  63.2 %  |  35.0 %  |  73.7 %  |  30.0 %  |
+     cafe/restaurant      |   78 :   95 |  88.0 %  |  |  66.7 %  | 100.0 %  |  95.2 %  |  90.0 %  |
+     car                  |   78 :   50 |  58.9 %  |  |  70.0 %  |  57.9 %  |  57.9 %  |  50.0 %  |
+     city_center          |   78 :   78 |  84.2 %  |  |  88.9 %  |  63.2 %  |  89.5 %  |  95.5 %  |
+     forest_path          |   78 :   66 |  68.1 %  |  |  71.4 %  |  66.7 %  |  38.9 %  |  95.2 %  |
+     grocery_store        |   78 :   66 |  68.5 %  |  |  63.2 %  |  95.2 %  |  84.2 %  |  31.6 %  |
+     home                 |   78 :   91 |  80.8 %  |  | 100.0 %  |  55.6 %  |  90.0 %  |  77.8 %  |
+     library              |   78 :   66 |  49.3 %  |  |  47.6 %  |  61.1 %  |  20.0 %  |  68.4 %  |
+     metro_station        |   78 :   95 |  96.1 %  |  |  84.2 %  | 100.0 %  | 100.0 %  | 100.0 %  |
+     office               |   78 :   87 |  98.7 %  |  |  94.7 %  | 100.0 %  | 100.0 %  | 100.0 %  |
+     park                 |   78 :   30 |  31.7 %  |  |  25.0 %  |  16.7 %  |  30.0 %  |  55.0 %  |
+     residential_area     |   78 :  125 |  77.4 %  |  |  73.7 %  |  57.1 %  |  94.7 %  |  84.2 %  |
+     train                |   78 :   53 |  44.8 %  |  |  44.4 %  |  21.1 %  |  30.4 %  |  83.3 %  |
+     tram                 |   78 :  163 |  88.4 %  |  | 100.0 %  |  94.4 %  |  59.1 %  | 100.0 %  |
+     =====================+======+======+==========+  +==========+==========+==========+==========+
+     Overall accuracy     | 1170 : 1170 |  70.0 %  |  |  70.8 %  |  66.0 %  |  69.5 %  |  73.5 %  |
+  [Done]                                                                             
+ 
+Train Time : 2675.88934803
+ 
+ 
+Test Time : 50.1415288448
+ 
+ 
+Total Time : 2726.57102513
