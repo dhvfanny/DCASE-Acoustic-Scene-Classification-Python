@@ -2,9 +2,9 @@
 # Flow
 # ==========================================================
 flow:
-  initialize: true
-  extract_features: true
-  feature_normalizer: true
+  initialize: false
+  extract_features: false
+  feature_normalizer: false
   train_system: true
   test_system: true
   evaluate_system: true
@@ -16,7 +16,7 @@ general:
   development_dataset: DCASE2013_Scene_DevelopmentSet
   challenge_dataset: DCASE2013_Scene_EvaluationSet
 
-  overwrite: false              # Overwrite previously stored data
+  overwrite: true              # Overwrite previously stored data
 
 # ==========================================================
 # Paths

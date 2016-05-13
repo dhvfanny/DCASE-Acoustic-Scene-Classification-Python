@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/rohit21122012/ASem7/DCASE2016-baseline-system-python/runs/2016/dnn2016med_chroma/dnn6/dnn6model1/model-1000"
+all_model_checkpoint_paths: "/home/rohit21122012/ASem7/DCASE2016-baseline-system-python/runs/2016/dnn2016med_chroma/dnn6/dnn6model1/model-1000"
