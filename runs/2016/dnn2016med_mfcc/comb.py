@@ -3,8 +3,8 @@ from src.dataset import *
 
 import numpy as np
 from src.evaluation import DCASE2016_SceneClassification_Metrics
-from sklearn.metrics import confusion_matrix 
-
+from sklearn.metrics import confusion_matrix, classification_report
+	
 def get_result_filename(fold, path, extension='txt'):
     if fold == 0:
         return os.path.join(path, 'results.' + extension)
@@ -46,7 +46,9 @@ def get_individual_result(result_path):
             'yp': y_pred_all_folds,
             'yt': y_true_all_folds,
             'll': likelihoods_all_folds,
+	    'cr': classification_report(y_true_all_folds, y_pred_all_folds, dataset.scene_labels,digits=3), 
 	    'cm': confusion_matrix(y_true_all_folds, y_pred_all_folds)}
+
 
 
 def get_combined_by_weight_result(weight, res1, res2):
@@ -67,26 +69,32 @@ def get_combined_by_weight_result(weight, res1, res2):
                 'yp': comb_pred,
                 'yt': comb_true,
                 'll': comb_ll,
+  		'cr': classification_report(comb_true, comb_pred, dataset.scene_labels, digits=3),
 		'cm': confusion_matrix(comb_true, comb_pred)}
+
 
 acc = 0.0
 max_acc = 0.0
 result1 = get_individual_result('../dnn2016med_mfcc/system/baseline_dcase2016_task1/')
-result2 = get_individual_result('../dnn2016med_gd/system/baseline_dcase2016_task1/')
+result2 = get_individual_result('../dnn2016med_mfcc_101/system/baseline_dcase2016_task1/')
 comb_cm = []
+
 for w in np.arange(0, 1, 0.01):
     res =  get_combined_by_weight_result(w, result1, result2)
     acc = res['acc']
     acc = np.sum(np.diag(res['cm']))/np.sum(np.sum(res['cm']))
-	
     if acc > max_acc:
 	comb_cm = res['cm']
         max_acc = acc
 	max_w = w
-print "MFCC accuracy :" + str(result1['acc']) + ", " +  str(np.sum(np.diag(result1['cm']))/np.sum(np.sum(result1['cm'])))
-print "LPGD accuracy :" + str(result2['acc']) + ", " +  str(np.sum(np.diag(result2['cm']))/np.sum(np.sum(result2['cm'])))
-
+	comb_cr = res['cr']
+print "MFCC accuracy :" + str(result1['acc']) + ", " +  str(np.sum(np.diag(result1['cm']))/np.sum(np.sum(result1['cm']))) 
+print result1['cr']
+print "MFCC-101 accuracy :" + str(result2['acc']) + ", " +  str(np.sum(np.diag(result2['cm']))/np.sum(np.sum(result2['cm']))) 
+print result2['cr']
 print "Max accuracy :" + str(max_acc) + " at w : " + str(max_w)
-print result1['cm']
-print result2['cm']
-print comb_cm
+print comb_cr
+#print result1['cm']
+#print result2['cm']
+#print comb_cm
+

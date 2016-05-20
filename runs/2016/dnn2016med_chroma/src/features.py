@@ -48,8 +48,9 @@ def feature_extraction_lp_group_delay(y, fs=44100, statistics=True, lpgd_params=
     
     feature_matrix = tauA
     feature_matrix = dct(feature_matrix, n=20)
-    print 'fm: ' + str(feature_matrix.shape)
     
+    print 'fm: ' + str(feature_matrix.shape)
+        
 
     # Collect into data structure
     if statistics:
@@ -162,9 +163,11 @@ def feature_extraction(y, fs=44100, statistics=True, include_mfcc0=True, include
 
     print 'mfcc dimensions: ' + str(mfcc.shape)
     '''
-    mfcc = librosa.feature.chroma_stft(y=y, sr=fs, n_fft =mfcc_params['n_fft'])
+    D = numpy.abs(librosa.stft(y, win_length=1764, hop_length=882))**2
+    mfcc = librosa.feature.chroma_stft(S=D)
     # Collect the feature matrix
     feature_matrix = mfcc
+    print feature_matrix.shape
     if include_delta:
         # Delta coefficients
         mfcc_delta = librosa.feature.delta(mfcc, **delta_params)

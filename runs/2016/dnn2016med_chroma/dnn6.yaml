@@ -2,7 +2,7 @@
 # Flow
 # ==========================================================
 flow:
-  initialize: true
+  initialize: false
   extract_features: true
   feature_normalizer: true
   train_system: true
@@ -16,7 +16,7 @@ general:
   development_dataset: TUTAcousticScenes_2016_DevelopmentSet
   challenge_dataset: TUTAcousticScenes_2016_EvaluationSet
 
-  overwrite: false             # Overwrite previously stored data
+  overwrite: true             # Overwrite previously stored data
 
 # ==========================================================
 # Paths
