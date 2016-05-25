@@ -89,8 +89,8 @@ classifier_parameters:
     init_params: wmc
 
   dnn:
-    hidden_units: [100,100,100]
-    steps: 1000
+    hidden_units: [1000,1000,1000]
+    steps: 2000
     batch_size: 1024
     learning_rate: 0.05
     n_classes: 15

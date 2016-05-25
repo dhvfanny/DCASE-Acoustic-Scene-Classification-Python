@@ -2,7 +2,7 @@
 # Flow
 # ==========================================================
 flow:
-  initialize: false
+  initialize: true
   extract_features: true
   feature_normalizer: true
   train_system: true
@@ -16,7 +16,7 @@ general:
   development_dataset: TUTAcousticScenes_2016_DevelopmentSet
   challenge_dataset: TUTAcousticScenes_2016_EvaluationSet
 
-  overwrite: true             # Overwrite previously stored data
+  overwrite: false             # Overwrite previously stored data
 
 # ==========================================================
 # Paths
@@ -63,13 +63,13 @@ features:
 # Classifier
 # ==========================================================
 classifier:
-  method: dnn6                   # The system supports only gmm
+  method: dnn                   # The system supports only gmm
   parameters: !!null            # Parameters are copied from classifier_parameters based on defined method
 
 classifier_parameters:
-  dnn6:
-    hidden_units: [100,100,100]
-    steps: 1000
+  dnn:
+    hidden_units: [1000,1000,1000]
+    steps: 2000
     batch_size: 1024
     learning_rate: 0.05
     n_classes: 15 
