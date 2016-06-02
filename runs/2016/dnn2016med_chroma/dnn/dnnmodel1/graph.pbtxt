@@ -202,7 +202,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "$\000\000\000\350\003\000\000"
+        tensor_content: "$\000\000\000d\000\000\000"
       }
     }
   }
@@ -337,7 +337,7 @@ node {
           size: 36
         }
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -424,7 +424,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 1000
+            size: 100
           }
         }
         float_val: 0.0
@@ -452,7 +452,7 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -541,7 +541,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "\350\003\000\000\350\003\000\000"
+        tensor_content: "d\000\000\000d\000\000\000"
       }
     }
   }
@@ -562,7 +562,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.0547722540796
+        float_val: -0.173205077648
       }
     }
   }
@@ -583,7 +583,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.0547722540796
+        float_val: 0.173205077648
       }
     }
   }
@@ -673,10 +673,10 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -763,7 +763,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 1000
+            size: 100
           }
         }
         float_val: 0.0
@@ -791,7 +791,7 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -880,7 +880,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "\350\003\000\000\350\003\000\000"
+        tensor_content: "d\000\000\000d\000\000\000"
       }
     }
   }
@@ -901,7 +901,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.0547722540796
+        float_val: -0.173205077648
       }
     }
   }
@@ -922,7 +922,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.0547722540796
+        float_val: 0.173205077648
       }
     }
   }
@@ -1012,10 +1012,10 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -1102,7 +1102,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 1000
+            size: 100
           }
         }
         float_val: 0.0
@@ -1130,7 +1130,7 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
       }
     }
@@ -1285,7 +1285,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "\350\003\000\000\017\000\000\000"
+        tensor_content: "d\000\000\000\017\000\000\000"
       }
     }
   }
@@ -1306,7 +1306,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.0547722540796
+        float_val: -0.173205077648
       }
     }
   }
@@ -1327,7 +1327,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.0547722540796
+        float_val: 0.173205077648
       }
     }
   }
@@ -1417,7 +1417,7 @@ node {
     value {
       shape {
         dim {
-          size: 1000
+          size: 100
         }
         dim {
           size: 15
