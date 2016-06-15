@@ -69,18 +69,18 @@ features:
 # Classifier
 # ==========================================================
 classifier:
-  method: dnn                   # The system supports only gmm
+  method: gmm                   # The system supports only gmm
   parameters: !!null            # Parameters are copied from classifier_parameters based on defined method
 
 classifier_parameters:
   gmm:
     n_components: 16            # Number of Gaussian components
-    covariance_type: diag       # [diag|full] Diagonal or full covariance matrix
+    covariance_type: full       # [diag|full] Diagonal or full covariance matrix
     random_state: 0
     thresh: !!null
     tol: 0.001
     min_covar: 0.001
-    n_iter: 40
+    n_iter: 100
     n_init: 1
     params: wmc
     init_params: wmc
@@ -88,6 +88,9 @@ classifier_parameters:
   dnn:
     hidden_units: [1000,1000,1000]
     steps: 2000
-    batch_size: 1024
-    learning_rate: 0.05
+    #batch_size: 1024
+    #learning_rate: 0.05
     n_classes: 15
+    #early_stopping_rounds: 500
+    #num_cores: 16
+    dropout: 0.3

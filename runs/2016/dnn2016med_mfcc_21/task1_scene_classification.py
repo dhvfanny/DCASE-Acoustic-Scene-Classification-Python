@@ -8,6 +8,8 @@ import textwrap
 import timeit
 
 import skflow
+import tensorflow as tf
+from tensorflow.contrib import learn
 from sklearn import mixture
 from sklearn import preprocessing as pp
 from sklearn.externals import joblib
@@ -598,6 +600,13 @@ def do_feature_normalization(dataset, feature_normalizer_path, feature_path, dat
             save_data(current_normalizer_file, normalizer)
 
 
+steps = 5000
+def exp_decay(global_step):
+    return tf.train.exponential_decay(
+        learning_rate=0.1, global_step=global_step,
+        decay_steps=steps, decay_rate=0.01)
+
+
 def do_system_training(dataset, model_path, feature_normalizer_path, feature_path, classifier_params,
                        dataset_evaluation_mode='folds', classifier_method='gmm', overwrite=False):
     """System training
@@ -721,9 +730,8 @@ def do_system_training(dataset, model_path, feature_normalizer_path, feature_pat
                         tot_data['y'] = numpy.hstack((tot_data['y'], numpy.repeat(label, len(data[label]), axis=0)))
                 else:
                     raise ValueError("Unknown classifier method [" + classifier_method + "]")
-
-            clf = skflow.TensorFlowDNNClassifier(**classifier_params)
-            if classifier_method == 'dnn':
+	    if classifier_method == 'dnn':
+            	clf = learn.DNNClassifier(**classifier_params)
                 tot_data['y'] = le.fit_transform(tot_data['y'])
                 clf.fit(tot_data['x'], tot_data['y'])
                 clf.save('dnn/dnnmodel1')
@@ -871,7 +879,7 @@ def do_classification_dnn(feature_data, model_container):
     logls = numpy.empty(15)
     logls.fill(-numpy.inf)
 
-    model_clf = skflow.TensorFlowEstimator.restore('dnn/dnnmodel1')
+    model_clf = learn.TensorFlowEstimator.restore('dnn/dnnmodel1')
 
     logls = numpy.sum(numpy.log(model_clf.predict_proba(feature_data)), 0)
 
@@ -970,8 +978,8 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
                 for result_item in results:
                     
 		    y_true = (dataset.file_meta(result_item[0])[0]['scene_label'],)
-		    print type(y_true)
-		    print type(result_item)
+		    #print type(y_true)
+		    #print type(result_item)
 		    writer.writerow(y_true + tuple(result_item))
 		  
 		  	
