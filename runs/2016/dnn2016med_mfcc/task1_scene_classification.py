@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
 #
 # DCASE 2016::Acoustic Scene Classification / Baseline System
@@ -8,6 +8,7 @@ import textwrap
 import timeit
 
 import skflow
+import tensorflow as tf
 from sklearn import mixture
 from sklearn import preprocessing as pp
 from sklearn.externals import joblib
@@ -148,17 +149,19 @@ def main(argv):
 
         foot()
 
+    test_start = timeit.default_timer()
     # System evaluation in development mode
     if args.development and not args.challenge:
+
 
         # System testing
         # ==================================================
         if params['flow']['test_system']:
             section_header('System testing')
 
-            test_start = timeit.default_timer()
 
-            do_system_testing(dataset=dataset,
+            do_system_testing(dataset_labels=dataset.scene_labels,
+			      dataset=dataset,
                               feature_path=params['path']['features'],
                               result_path=params['path']['results'],
                               model_path=params['path']['models'],
@@ -167,8 +170,6 @@ def main(argv):
                               classifier_method=params['classifier']['method'],
                               overwrite=params['general']['overwrite']
                               )
-
-            test_end = timeit.default_timer()
 
             foot()
 
@@ -186,7 +187,7 @@ def main(argv):
     # System evaluation with challenge data
     elif not args.development and args.challenge:
         # Fetch data over internet and setup the data
-        challenge_dataset = eval(params['general']['challenge_dataset'])()
+        challenge_dataset = eval(params['general']['challenge_dataset'])(data_path=params['path']['data'])
 
         if params['flow']['initialize']:
             challenge_dataset.fetch()
@@ -195,7 +196,8 @@ def main(argv):
         if params['flow']['test_system']:
             section_header('System testing with challenge data')
 
-            do_system_testing(dataset=challenge_dataset,
+            do_system_testing(dataset_labels = dataset.scene_labels,
+			      dataset=challenge_dataset,
                               feature_path=params['path']['features'],
                               result_path=params['path']['challenge_results'],
                               model_path=params['path']['models'],
@@ -210,6 +212,8 @@ def main(argv):
             print " "
             print "Your results for the challenge data are stored at [" + params['path']['challenge_results'] + "]"
             print " "
+    test_end = timeit.default_timer()
+	
     tot_end = timeit.default_timer()
     print " "
     print "Train Time : " + str(train_end - train_start)
@@ -598,6 +602,13 @@ def do_feature_normalization(dataset, feature_normalizer_path, feature_path, dat
             save_data(current_normalizer_file, normalizer)
 
 
+def exp_decay(global_step):
+    return tf.train.exponential_decay(
+        learning_rate=0.1, global_step=global_step,
+        decay_steps=5000, decay_rate=0.01)
+
+
+
 def do_system_training(dataset, model_path, feature_normalizer_path, feature_path, classifier_params,
                        dataset_evaluation_mode='folds', classifier_method='gmm', overwrite=False):
     """System training
@@ -722,8 +733,8 @@ def do_system_training(dataset, model_path, feature_normalizer_path, feature_pat
                 else:
                     raise ValueError("Unknown classifier method [" + classifier_method + "]")
 
-            clf = skflow.TensorFlowDNNClassifier(**classifier_params)
             if classifier_method == 'dnn':
+		clf = skflow.TensorFlowDNNClassifier(learning_rate=exp_decay,**classifier_params)
                 tot_data['y'] = le.fit_transform(tot_data['y'])
                 clf.fit(tot_data['x'], tot_data['y'])
                 clf.save('dnn/dnnmodel1')
@@ -732,7 +743,7 @@ def do_system_training(dataset, model_path, feature_normalizer_path, feature_pat
             save_data(current_model_file, model_container)
 
 
-def do_system_testing(dataset, result_path, feature_path, model_path, feature_params,
+def do_system_testing(dataset_labels,dataset, result_path, feature_path, model_path, feature_params,
                       dataset_evaluation_mode='folds', classifier_method='gmm', overwrite=False):
     """System testing.
 
@@ -845,7 +856,9 @@ def do_system_testing(dataset, result_path, feature_path, model_path, feature_pa
                     current_class = current_result['class']
 		elif classifier_method == 'dnn':
                     current_result = do_classification_dnn(feature_data, model_container)
-		    current_class = dataset.scene_labels[current_result['class_id']]
+	#	    print current_result['class_id']
+	#	    print dataset_labels
+		    current_class = dataset_labels[current_result['class_id']]
                 else:
                     raise ValueError("Unknown classifier method [" + classifier_method + "]")
 
@@ -856,10 +869,11 @@ def do_system_testing(dataset, result_path, feature_path, model_path, feature_pa
 		elif classifier_method == 'dnn':
 		    logs_in_tuple = tuple(lo for lo in current_result['logls'])
 		    results.append((dataset.absolute_to_relative(item['file']),
-				current_class) + logs_in_tuple)
+				current_class)) 
+				#+ logs_in_tuple)
 		else:
 		    raise ValueError("Unknown classifier method [" + classifier_method + "]")	
-            # Save testing results
+	    #Save testing results
             with open(current_result_file, 'wt') as f:
                 writer = csv.writer(f, delimiter='\t')
                 for result_item in results:
@@ -874,8 +888,8 @@ def do_classification_dnn(feature_data, model_container):
     model_clf = skflow.TensorFlowEstimator.restore('dnn/dnnmodel1')
 
     logls = numpy.sum(numpy.log(model_clf.predict_proba(feature_data)), 0)
-
     classification_result_id = numpy.argmax(logls)
+    
     return {'class_id': classification_result_id,
             'logls': logls}
 
@@ -970,8 +984,8 @@ def do_system_evaluation(dataset, result_path, dataset_evaluation_mode='folds'):
                 for result_item in results:
                     
 		    y_true = (dataset.file_meta(result_item[0])[0]['scene_label'],)
-		    print type(y_true)
-		    print type(result_item)
+		    #print type(y_true)
+		    #print type(result_item)
 		    writer.writerow(y_true + tuple(result_item))
 		  
 		  	

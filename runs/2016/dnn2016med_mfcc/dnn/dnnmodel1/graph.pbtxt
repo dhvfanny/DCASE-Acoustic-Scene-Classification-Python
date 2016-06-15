@@ -202,7 +202,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "<\000\000\000d\000\000\000"
+        tensor_content: "<\000\000\000\350\003\000\000"
       }
     }
   }
@@ -337,7 +337,7 @@ node {
           size: 60
         }
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -424,7 +424,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 100
+            size: 1000
           }
         }
         float_val: 0.0
@@ -452,7 +452,7 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -541,7 +541,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "d\000\000\000d\000\000\000"
+        tensor_content: "\350\003\000\000\350\003\000\000"
       }
     }
   }
@@ -562,7 +562,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.173205077648
+        float_val: -0.0547722540796
       }
     }
   }
@@ -583,7 +583,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.173205077648
+        float_val: 0.0547722540796
       }
     }
   }
@@ -673,10 +673,10 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -763,7 +763,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 100
+            size: 1000
           }
         }
         float_val: 0.0
@@ -791,7 +791,7 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -880,7 +880,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "d\000\000\000d\000\000\000"
+        tensor_content: "\350\003\000\000\350\003\000\000"
       }
     }
   }
@@ -901,7 +901,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.173205077648
+        float_val: -0.0547722540796
       }
     }
   }
@@ -922,7 +922,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.173205077648
+        float_val: 0.0547722540796
       }
     }
   }
@@ -1012,10 +1012,10 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -1102,7 +1102,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 100
+            size: 1000
           }
         }
         float_val: 0.0
@@ -1130,7 +1130,7 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
       }
     }
@@ -1285,7 +1285,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "d\000\000\000\017\000\000\000"
+        tensor_content: "\350\003\000\000\017\000\000\000"
       }
     }
   }
@@ -1306,7 +1306,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.173205077648
+        float_val: -0.0547722540796
       }
     }
   }
@@ -1327,7 +1327,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.173205077648
+        float_val: 0.0547722540796
       }
     }
   }
@@ -1417,7 +1417,7 @@ node {
     value {
       shape {
         dim {
-          size: 100
+          size: 1000
         }
         dim {
           size: 15
@@ -1919,7 +1919,7 @@ node {
   }
 }
 node {
-  name: "learning_rate/Initializer/Const"
+  name: "ExponentialDecay/learning_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -1934,20 +1934,69 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.0500000007451
+        float_val: 0.10000000149
       }
     }
   }
 }
 node {
-  name: "learning_rate"
-  op: "Variable"
+  name: "ExponentialDecay/Cast"
+  op: "Cast"
+  input: "global_step/read"
   attr {
-    key: "container"
+    key: "DstT"
     value {
-      s: ""
+      type: DT_FLOAT
     }
   }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "ExponentialDecay/Cast_1/x"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 5000
+      }
+    }
+  }
+}
+node {
+  name: "ExponentialDecay/Cast_1"
+  op: "Cast"
+  input: "ExponentialDecay/Cast_1/x"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "ExponentialDecay/Cast_2/x"
+  op: "Const"
   attr {
     key: "dtype"
     value {
@@ -1955,47 +2004,46 @@ node {
     }
   }
   attr {
-    key: "shape"
+    key: "value"
     value {
-      shape {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.00999999977648
       }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
     }
   }
 }
 node {
-  name: "learning_rate/Assign"
-  op: "Assign"
-  input: "learning_rate"
-  input: "learning_rate/Initializer/Const"
+  name: "ExponentialDecay/truediv"
+  op: "Div"
+  input: "ExponentialDecay/Cast"
+  input: "ExponentialDecay/Cast_1"
   attr {
     key: "T"
     value {
       type: DT_FLOAT
     }
   }
+}
+node {
+  name: "ExponentialDecay/Pow"
+  op: "Pow"
+  input: "ExponentialDecay/Cast_2/x"
+  input: "ExponentialDecay/truediv"
   attr {
-    key: "use_locking"
+    key: "T"
     value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
+      type: DT_FLOAT
     }
   }
 }
 node {
-  name: "learning_rate/read"
-  op: "Identity"
-  input: "learning_rate"
+  name: "ExponentialDecay"
+  op: "Mul"
+  input: "ExponentialDecay/learning_rate"
+  input: "ExponentialDecay/Pow"
   attr {
     key: "T"
     value {
@@ -4216,7 +4264,7 @@ node {
   name: "train/update_dnn/layer0/Linear/Matrix/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer0/Linear/Matrix"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_0"
   attr {
     key: "T"
@@ -4235,7 +4283,7 @@ node {
   name: "train/update_dnn/layer0/Linear/Bias/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer0/Linear/Bias"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_1"
   attr {
     key: "T"
@@ -4254,7 +4302,7 @@ node {
   name: "train/update_dnn/layer1/Linear/Matrix/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer1/Linear/Matrix"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_2"
   attr {
     key: "T"
@@ -4273,7 +4321,7 @@ node {
   name: "train/update_dnn/layer1/Linear/Bias/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer1/Linear/Bias"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_3"
   attr {
     key: "T"
@@ -4292,7 +4340,7 @@ node {
   name: "train/update_dnn/layer2/Linear/Matrix/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer2/Linear/Matrix"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_4"
   attr {
     key: "T"
@@ -4311,7 +4359,7 @@ node {
   name: "train/update_dnn/layer2/Linear/Bias/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "dnn/layer2/Linear/Bias"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_5"
   attr {
     key: "T"
@@ -4330,7 +4378,7 @@ node {
   name: "train/update_logistic_regression/weights/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "logistic_regression/weights"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_6"
   attr {
     key: "T"
@@ -4349,7 +4397,7 @@ node {
   name: "train/update_logistic_regression/bias/ApplyGradientDescent"
   op: "ApplyGradientDescent"
   input: "logistic_regression/bias"
-  input: "learning_rate/read"
+  input: "ExponentialDecay"
   input: "clip_by_global_norm/clip_by_global_norm/_7"
   attr {
     key: "T"
@@ -4433,7 +4481,6 @@ node {
   input: "^dnn/layer2/Linear/Bias/Assign"
   input: "^logistic_regression/weights/Assign"
   input: "^logistic_regression/bias/Assign"
-  input: "^learning_rate/Assign"
 }
 node {
   name: "save/Const"
@@ -4472,7 +4519,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 10
+            size: 9
           }
         }
         string_val: "dnn/layer0/Linear/Bias"
@@ -4482,7 +4529,6 @@ node {
         string_val: "dnn/layer2/Linear/Bias"
         string_val: "dnn/layer2/Linear/Matrix"
         string_val: "global_step"
-        string_val: "learning_rate"
         string_val: "logistic_regression/bias"
         string_val: "logistic_regression/weights"
       }
@@ -4505,10 +4551,9 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 10
+            size: 9
           }
         }
-        string_val: ""
         string_val: ""
         string_val: ""
         string_val: ""
@@ -4535,7 +4580,6 @@ node {
   input: "dnn/layer2/Linear/Bias"
   input: "dnn/layer2/Linear/Matrix"
   input: "global_step"
-  input: "learning_rate"
   input: "logistic_regression/bias"
   input: "logistic_regression/weights"
   attr {
@@ -4549,7 +4593,6 @@ node {
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_INT32
-        type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
       }
@@ -5179,7 +5222,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "learning_rate"
+        string_val: "logistic_regression/bias"
       }
     }
   }
@@ -5227,7 +5270,7 @@ node {
 node {
   name: "save/Assign_7"
   op: "Assign"
-  input: "learning_rate"
+  input: "logistic_regression/bias"
   input: "save/restore_slice_7"
   attr {
     key: "T"
@@ -5264,7 +5307,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "logistic_regression/bias"
+        string_val: "logistic_regression/weights"
       }
     }
   }
@@ -5312,93 +5355,8 @@ node {
 node {
   name: "save/Assign_8"
   op: "Assign"
-  input: "logistic_regression/bias"
-  input: "save/restore_slice_8"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/restore_slice_9/tensor_name"
-  op: "Const"
-  attr {
-    key: "dtype"
-    value {
-      type: DT_STRING
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_STRING
-        tensor_shape {
-        }
-        string_val: "logistic_regression/weights"
-      }
-    }
-  }
-}
-node {
-  name: "save/restore_slice_9/shape_and_slice"
-  op: "Const"
-  attr {
-    key: "dtype"
-    value {
-      type: DT_STRING
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_STRING
-        tensor_shape {
-        }
-        string_val: ""
-      }
-    }
-  }
-}
-node {
-  name: "save/restore_slice_9"
-  op: "RestoreSlice"
-  input: "save/Const"
-  input: "save/restore_slice_9/tensor_name"
-  input: "save/restore_slice_9/shape_and_slice"
-  attr {
-    key: "dt"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "preferred_shard"
-    value {
-      i: -1
-    }
-  }
-}
-node {
-  name: "save/Assign_9"
-  op: "Assign"
   input: "logistic_regression/weights"
-  input: "save/restore_slice_9"
+  input: "save/restore_slice_8"
   attr {
     key: "T"
     value {
@@ -5430,7 +5388,6 @@ node {
   input: "^save/Assign_6"
   input: "^save/Assign_7"
   input: "^save/Assign_8"
-  input: "^save/Assign_9"
 }
 versions {
   producer: 8

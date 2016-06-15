@@ -54,8 +54,14 @@ class Dataset(object):
         # Path to meta data file
         self.meta_file = os.path.join(self.local_path, self.meta_filename)
 
+        # Error meta data file, csv-format
+        self.error_meta_filename = 'error.txt'
+
+        # Path to error meta data file
+        self.error_meta_file = os.path.join(self.local_path, self.error_meta_filename)
+
         # Hash file to detect removed or added files
-        self.filelisthash_filename = 'filelist.hash'
+        self.filelisthash_filename = 'filelist.python.hash'
 
         # Number of evaluation folds
         self.evaluation_folds = 1
@@ -75,6 +81,9 @@ class Dataset(object):
 
         # List of meta data dict
         self.meta_data = None
+
+        # List of audio error meta data dict
+        self.error_meta_data = None
 
         # Training meta data for folds
         self.evaluation_data_train = {}
@@ -118,7 +127,8 @@ class Dataset(object):
                     for f in l:
                         file_name, file_extension = os.path.splitext(f)
                         if file_extension[1:] in self.audio_extensions:
-                            self.files.append(os.path.abspath(os.path.join(path, f)))
+                            if os.path.abspath(os.path.join(path, f)) not in self.files:
+                                self.files.append(os.path.abspath(os.path.join(path, f)))
             self.files.sort()
         return self.files
 
@@ -162,6 +172,7 @@ class Dataset(object):
         if self.meta_data is None:
             self.meta_data = []
             meta_id = 0
+
             if os.path.isfile(self.meta_file):
                 f = open(self.meta_file, 'rt')
                 try:
@@ -209,6 +220,66 @@ class Dataset(object):
         """
 
         return len(self.meta)
+
+    @property
+    def error_meta(self):
+        """Get audio error meta data for dataset. If not already read from disk, data is read and returned.
+
+        Parameters
+        ----------
+        Nothing
+
+        Returns
+        -------
+        error_meta_data : list
+            List containing audio error meta data as dict.
+
+        Raises
+        -------
+        IOError
+            audio error meta file not found.
+
+        """
+
+        if self.error_meta_data is None:
+            self.error_meta_data = []
+            error_meta_id = 0
+            if os.path.isfile(self.error_meta_file):
+                f = open(self.error_meta_file, 'rt')
+                try:
+                    reader = csv.reader(f, delimiter='\t')
+                    for row in reader:
+                        if len(row) == 4:
+                            # Event meta
+                            self.error_meta_data.append({'file': row[0],
+                                                   'event_onset': float(row[1]),
+                                                   'event_offset': float(row[2]),
+                                                   'event_label': row[3].rstrip(),
+                                                   'id': error_meta_id
+                                                   })
+                        error_meta_id += 1
+                finally:
+                    f.close()
+            else:
+                raise IOError("Error meta file not found [%s]" % self.error_meta_file)
+
+        return self.error_meta_data
+
+    def error_meta_count(self):
+        """Number of error meta data items.
+
+        Parameters
+        ----------
+        Nothing
+
+        Returns
+        -------
+        meta_item_count : int
+            Meta data item count
+
+        """
+
+        return len(self.error_meta)
 
     @property
     def fold_count(self):
@@ -578,7 +649,8 @@ class Dataset(object):
         filelist = []
         for path, subdirs, files in os.walk(self.local_path):
             for name in files:
-                filelist.append(os.path.join(path, name))
+                if os.path.splitext(name)[1] != os.path.splitext(self.filelisthash_filename)[1]:
+                    filelist.append(os.path.join(path, name))
         return filelist
 
     def check_filelist(self):
@@ -790,6 +862,29 @@ class Dataset(object):
 
         return file_meta
 
+    def file_error_meta(self, file):
+        """Error meta data for given file
+
+        Parameters
+        ----------
+        file : str
+            File name
+
+        Returns
+        -------
+        list : list of dicts
+            List containing all error meta data related to given file.
+
+        """
+
+        file = self.absolute_to_relative(file)
+        file_error_meta = []
+        for item in self.error_meta:
+            if item['file'] == file:
+                file_error_meta.append(item)
+
+        return file_error_meta
+
     def relative_to_absolute_path(self, path):
         """Converts relative path into absolute path.
 
@@ -865,6 +960,11 @@ class TUTAcousticScenes_2016_DevelopmentSet(Dataset):
             {
                 'remote_package': 'https://zenodo.org/record/45739/files/TUT-acoustic-scenes-2016-development.meta.zip',
                 'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-development.meta.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'https://zenodo.org/record/45739/files/TUT-acoustic-scenes-2016-development.error.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-development.error.zip'),
                 'local_audio_path': os.path.join(self.local_path, 'audio'),
             },
             {
@@ -983,6 +1083,31 @@ class TUTAcousticScenes_2016_EvaluationSet(Dataset):
                 'local_package': None,
                 'local_audio_path': os.path.join(self.local_path, 'audio'),
             },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-acoustic-scenes-2016-evaluation.doc.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-evaluation.doc.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-acoustic-scenes-2016-evaluation.audio.1.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-evaluation.audio.1.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-acoustic-scenes-2016-evaluation.audio.2.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-evaluation.audio.2.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-acoustic-scenes-2016-evaluation.audio.3.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-evaluation.audio.3.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-acoustic-scenes-2016-evaluation.meta.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-acoustic-scenes-2016-evaluation.meta.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            }
         ]
 
     def on_after_extract(self):
@@ -1027,6 +1152,39 @@ class TUTAcousticScenes_2016_EvaluationSet(Dataset):
     def train(self, fold=0):
         raise IOError('Train setup not available.')
 
+    def test(self, fold=0):
+        """List of testing items.
+
+        Parameters
+        ----------
+        fold : int > 0 [scalar]
+            Fold id, if zero all meta data is returned.
+            (Default value=0)
+
+        Returns
+        -------
+        list : list of dicts
+            List containing all meta data assigned to testing set for given fold.
+
+        """
+
+        if fold not in self.evaluation_data_test:
+            self.evaluation_data_test[fold] = []
+            if fold > 0:
+                with open(os.path.join(self.evaluation_setup_path, 'fold' + str(fold) + '_test.txt'), 'rt') as f:
+                    for row in csv.reader(f, delimiter='\t'):
+                        self.evaluation_data_test[fold].append({'file': self.relative_to_absolute_path(row[0])})
+            else:
+                data = []
+                files = []
+                for item in self.audio_files:
+                    if self.relative_to_absolute_path(item) not in files:
+                        data.append({'file': self.relative_to_absolute_path(item)})
+                        files.append(self.relative_to_absolute_path(item))
+
+                self.evaluation_data_test[fold] = data
+
+        return self.evaluation_data_test[fold]
 
 # TUT Sound events 2016 development and evaluation sets
 class TUTSoundEvents_2016_DevelopmentSet(Dataset):
@@ -1240,6 +1398,22 @@ class TUTSoundEvents_2016_EvaluationSet(Dataset):
                 'local_package': None,
                 'local_audio_path': os.path.join(self.local_path, 'audio', 'residential_area'),
             },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-sound-events-2016-evaluation.doc.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-sound-events-2016-evaluation.doc.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-sound-events-2016-evaluation.meta.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-sound-events-2016-evaluation.meta.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+            {
+                'remote_package': 'http://www.cs.tut.fi/sgn/arg/dcase2016/evaluation_data/TUT-sound-events-2016-evaluation.audio.zip',
+                'local_package': os.path.join(self.local_path, 'TUT-sound-events-2016-evaluation.audio.zip'),
+                'local_audio_path': os.path.join(self.local_path, 'audio'),
+            },
+
         ]
 
     @property
@@ -1310,19 +1484,13 @@ class TUTSoundEvents_2016_EvaluationSet(Dataset):
                     self.evaluation_data_test[fold][scene_label_] = []
 
                 if fold > 0:
-                    with open(os.path.join(self.evaluation_setup_path, scene_label + '_fold' + str(fold) + '_test.txt'), 'rt') as f:
+                    with open(os.path.join(self.evaluation_setup_path, scene_label_ + '_fold' + str(fold) + '_test.txt'), 'rt') as f:
                         for row in csv.reader(f, delimiter='\t'):
                             self.evaluation_data_test[fold][scene_label_].append({'file': self.relative_to_absolute_path(row[0])})
                 else:
-                    data = []
-                    files = []
-                    for item in self.audio_files:
-                        if scene_label_ in item:
-                            if self.relative_to_absolute_path(item) not in files:
-                                data.append({'file': self.relative_to_absolute_path(item)})
-                                files.append(self.relative_to_absolute_path(item))
-
-                    self.evaluation_data_test[0][scene_label_] = data
+                    with open(os.path.join(self.evaluation_setup_path, scene_label_ + '_test.txt'), 'rt') as f:
+                        for row in csv.reader(f, delimiter='\t'):
+                            self.evaluation_data_test[fold][scene_label_].append({'file': self.relative_to_absolute_path(row[0])})
 
         if scene_label:
             return self.evaluation_data_test[fold][scene_label]

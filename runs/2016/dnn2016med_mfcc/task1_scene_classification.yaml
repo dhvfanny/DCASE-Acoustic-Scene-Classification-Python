@@ -38,7 +38,7 @@ path:
 # Feature extraction
 # ==========================================================
 features:
-  method: lfcc
+  method: mfcc
 
   fs: 44100
   win_length_seconds: 0.04
@@ -86,8 +86,9 @@ classifier_parameters:
     init_params: wmc
 
   dnn:
-    hidden_units: [100,100,100]
-    steps: 1000
+    hidden_units: [1000,1000,1000]
+    steps: 2500 
     batch_size: 1024
-    learning_rate: 0.05
+    #learning_rate: 0.01
     n_classes: 15
+    num_cores: 12
